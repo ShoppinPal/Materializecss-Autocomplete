@@ -1,0 +1,46 @@
+<div class="acDirectiveAutocomplete" id="acDirective-{{ac.autocompleteId}}" >
+    <div class="row">
+        <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()" ng-click="ac.positionDropdown()" >
+            <span class="text-input-wrapper">
+            <input id="autocomplete"
+                   name="autocompleteModule"
+                   type="text"
+                   ng-model="ac.searchText"
+                   ng-focus="ac.focus($event)"
+                   ng-blur="ac.blur($event)"
+                   ng-keydown="ac.keydown($event)"
+                   class="validate"
+                   ng-minlength="ac.inputMinlength"
+                   ng-disabled="ac.isDisabled">
+                 <span class="clearBtn" ng-if="ac.searchText != ''" title="Clear" ng-click="ac.clearValue()">&times;</span>
+                <label for="autocomplete" id="labelAutocomplet" >{{ac.inputName}}</label></span>
+        </div>
+    </div>
+    <div class="progress" ng-show="ac.loading">
+        <div class="indeterminate"></div>
+    </div>
+  <div class="mainDropdownDiv row" ng-hide="ac.hidden" ng-mouseenter="ac.onListEnter()" ng-mouseleave="ac.onListLeave()" ng-mouseup="ac.onMouseup()">
+      <div id="acDropdown-{{ac.autocompleteId}}" class="acDropdownAutocomplete s12">
+            <ul class="dropupMenu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                <li class="autocompleteLI waves-effect"
+                    ng-repeat="item in ac.itemList | filter: (!ac.remoteMethod ? ac.searchText  : '' )"
+                    ng-click="ac.selectItem(item)"
+                    ng-class="{'selected': $index === ac.index }"
+                    ng-if="ac.searchText !== ''">
+                    {{item[ac.displayProperty]}}
+                </li>
+                <li class="waves-effect"
+                    ng-hide="ac.hidden"
+                    ng-if=" ac.itemList.length == 0">
+                       Your search "{{ac.searchText}}"   Not Found
+                </li>
+                <!--<li class="waves-effect"-->
+                    <!--ng-repeat="item in ac.itemList | filter: ac.searchText"-->
+                    <!--ng-click="ac.selectItem(item)"-->
+                    <!--ng-class="{'selected': $index === ac.index }">-->
+                    <!--{{item[ac.displayProperty]}}-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
