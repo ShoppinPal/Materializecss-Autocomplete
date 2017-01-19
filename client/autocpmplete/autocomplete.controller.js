@@ -11,7 +11,7 @@
         self.setInputClearButton = setInputClearButton;
         self.clearValue = clearValue;
         self.clearSelectedItem = clearSelectedItem;
-
+        self.onChangeColor = onChangeColor;
 
         self.searchAll = "";
         self.isDropUp = false;
@@ -130,12 +130,6 @@
         };
 
         /*
-         * function Disabled input box
-         */
-                self.getDisabled = function () {
-
-                };
-        /*
          * If showItemName is true then show itemName in label
          */
 
@@ -159,8 +153,6 @@
         function clearValue() {
             setInputClearButton();
             clearSelectedItem();
-
-
         }
 
         /**
@@ -177,17 +169,12 @@
          */
         function setInputClearButton() {
 
-
-
             // self.searchText has a space character at the end, so we blank it one more time and then
             // focus.
             self.element.input.blur();
             self.element.input.value = null;
             handleSearchText();
             self.element.input.focus();
-
-
-
         }
 
 
@@ -288,6 +275,20 @@
         }
 
         positionDropdown();
+
+
+
+       function onChangeColor () {
+            // var inputBorder = document.getElementById('autocomplete');
+            //
+            // if(self.itemList.length !== ""){
+            //     inputBorder.style.borderBottomColor = "black";
+            // }
+            // else {
+            //     inputBorder.style.borderBottomColor = "green";
+            // }
+
+        };
 
 
         /**
