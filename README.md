@@ -3,7 +3,7 @@
 # installation 
 
 ```bower install material.autocomplte --save```
-npm install material.autocomplte --save```
+
 
 
 # Demo 
