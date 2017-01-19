@@ -1,5 +1,5 @@
 {
-  "name": "DemoLoopback",
+  "name": "material.autocomplete",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -31,9 +31,17 @@
     "nsp": "^2.1.0"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+ssh://git@github.com/ShoppinPal/AutoComplete.git"
   },
-  "license": "UNLICENSED",
-  "description": "DemoLoopback"
+  "license": "ISC",
+  "description": "DemoLoopback",
+  "keywords": [
+    "html"
+  ],
+  "author": "shoppinpal",
+  "bugs": {
+    "url": "https://github.com/ShoppinPal/AutoComplete/issues"
+  },
+  "homepage": "https://github.com/ShoppinPal/AutoComplete#readme"
 }

@@ -1,11 +1,14 @@
 'use strict';
 
+var bdd = require('../helpers/bdd-if');
 var helpers = require('./_helpers');
 var Promise = require('bluebird');
 var should = require('should');
 
 module.exports = function(dataSourceFactory, connectorCapabilities) {
-  describe('keys', function() {
+  var canIterateKeys = connectorCapabilities.canIterateKeys !== false;
+
+  bdd.describeIf(canIterateKeys, 'keys', function() {
     var CacheItem;
     beforeEach(function unpackContext() {
       CacheItem = helpers.givenCacheItem(dataSourceFactory);
@@ -54,7 +57,8 @@ module.exports = function(dataSourceFactory, connectorCapabilities) {
         });
     });
 
-    it('handles large key set', function() {
+    var largeKeySets = connectorCapabilities.canIterateLargeKeySets !== false;
+    bdd.itIf(largeKeySets, 'handles large key set', function() {
       var expectedKeys = [];
       for (var ix = 0; ix < 1000; ix++)
         expectedKeys.push('key-' + ix);
@@ -83,19 +87,19 @@ module.exports = function(dataSourceFactory, connectorCapabilities) {
       });
 
       it('supports "?" operator', function() {
-        return CacheItem.sortedKeys({ match: 'h?llo' }).then(function(keys) {
+        return CacheItem.sortedKeys({match: 'h?llo'}).then(function(keys) {
           should(keys).eql(['hallo', 'hello', 'hxllo']);
         });
       });
 
       it('supports "*" operator', function() {
-        return CacheItem.sortedKeys({ match: 'h*llo' }).then(function(keys) {
+        return CacheItem.sortedKeys({match: 'h*llo'}).then(function(keys) {
           should(keys).eql(['hallo', 'heeello', 'hello', 'hllo', 'hxllo']);
         });
       });
 
       it('handles no matches found', function() {
-        return CacheItem.sortedKeys({ match: 'not-found' })
+        return CacheItem.sortedKeys({match: 'not-found'})
           .then(function(keys) {
             should(keys).eql([]);
           });

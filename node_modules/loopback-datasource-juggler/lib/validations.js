@@ -2,6 +2,7 @@
 // Node module: loopback-datasource-juggler
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
+'use strict';
 
 var g = require('strong-globalize')();
 var util = require('util');
@@ -127,9 +128,11 @@ Validatable.validatesNumericalityOf = getConfigurator('numericality');
  * ```
  *
  * @param {String} propertyName  Property name to validate.
- * @options {Object} Options
+ * @options {Object} Options See below.
  * @property {Array} inArray Property must match one of the values in the array to be valid.
- * @property {String} message Optional error message if property is not valid.   Default error message: "is not included in the list".
+ * @property {String} message Optional error message if property is not valid.
+ * Default error message: "is not included in the list".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
 Validatable.validatesInclusionOf = getConfigurator('inclusion');
 
@@ -142,6 +145,7 @@ Validatable.validatesInclusionOf = getConfigurator('inclusion');
  * @options {Object} Options
  * @property {Array} inArray Property must match one of the values in the array to be valid.
  * @property {String} message Optional error message if property is not valid.  Default error message: "is reserved".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
 Validatable.validatesExclusionOf = getConfigurator('exclusion');
 
@@ -155,6 +159,7 @@ Validatable.validatesExclusionOf = getConfigurator('exclusion');
  * @options {Object} Options
  * @property {RegExp} with Regular expression to validate format.
  * @property {String} message Optional error message if property is not valid.  Default error message: " is invalid".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
 Validatable.validatesFormatOf = getConfigurator('format');
 
@@ -176,6 +181,7 @@ Validatable.validatesFormatOf = getConfigurator('format');
  * @param {Function} validatorFn Custom validation function.
  * @options {Object} Options See below.
  * @property {String} message Optional error message if property is not valid.  Default error message: " is invalid".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
 Validatable.validate = getConfigurator('custom');
 
@@ -205,10 +211,11 @@ Validatable.validate = getConfigurator('custom');
  *```
  * @param {String} propertyName  Property name to validate.
  * @param {Function} validatorFn Custom validation function.
- * @options {Object} Options See below
+ * @options {Object} Options See below.
  * @property {String} message Optional error message if property is not valid.  Default error message: " is invalid".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
-Validatable.validateAsync = getConfigurator('custom', { async: true });
+Validatable.validateAsync = getConfigurator('custom', {async: true});
 
 /**
  * Validate uniqueness. Ensure the value for property is unique in the collection of models.
@@ -231,8 +238,9 @@ Validatable.validateAsync = getConfigurator('custom', { async: true });
  * @property {RegExp} with Regular expression to validate format.
  * @property {Array.<String>} scopedTo List of properties defining the scope.
  * @property {String} message Optional error message if property is not valid.  Default error message: "is not unique".
+ * @property {Boolean} allowNull Whether null values are allowed.
  */
-Validatable.validatesUniquenessOf = getConfigurator('uniqueness', { async: true });
+Validatable.validatesUniquenessOf = getConfigurator('uniqueness', {async: true});
 
 // implementation of validators
 
@@ -345,7 +353,7 @@ function validateUniqueness(attr, conf, err, options, done) {
   if (blank(this[attr])) {
     return process.nextTick(done);
   }
-  var cond = { where: {}};
+  var cond = {where: {}};
   cond.where[attr] = this[attr];
 
   if (conf && conf.scopedTo) {

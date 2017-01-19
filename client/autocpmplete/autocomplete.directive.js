@@ -20,8 +20,6 @@
                 minLength:        '=?acMinLength',
                 autocompleteId: '@acAutocompleteId',
                 isDisabled:'@?acIsDisabled'
-
-
             },
             replace: true,
             controller: 'materialAutocompleteCntrl',
