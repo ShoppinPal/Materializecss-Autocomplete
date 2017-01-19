@@ -34,6 +34,11 @@ Eg.
 ```
 
 
+<<<<<<< HEAD
+=======
+```bower install material.autocomplte --save```
+
+>>>>>>> 22b138355db872f7e23bba3fa5e625d85e5f59c9
 
 ### Description of attributes
 | Parameter | Type | Description | Binding |
