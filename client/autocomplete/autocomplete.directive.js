@@ -24,7 +24,7 @@
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl: 'autocpmplete/views/autocomplete.html'
+            templateUrl: 'autocomplete/views/autocomplete.html'
         };
     };
 
