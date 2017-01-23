@@ -11,7 +11,7 @@ Or
 
 
 ### Getting Started
-Download the code, and include the angucomplete.js file in your page. Then add the material.autocomplte module to your Angular App file
+Download the code, and include the autocomplete.min.js file in your page. Then add the material.autocomplte module to your Angular App file
 Eg.
 
 ```html
