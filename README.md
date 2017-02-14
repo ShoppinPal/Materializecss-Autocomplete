@@ -19,6 +19,7 @@ Eg.
 ```
 
 ### Usage 
+    For the simple Autocomplete template 
 ```html
       <material-autocomplete
         ac-input-name="Products"
