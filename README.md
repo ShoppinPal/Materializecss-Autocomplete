@@ -29,7 +29,7 @@ Eg.
         ac-search-text="test.searchTextProduct"
         ac-remote-method="test.fetchDataFromServer(test.searchTextProduct)"
         ac-place-holder=" &#128269; &nbsp; &nbsp; Search the items here...."
-        ac-input-minlength="2">
+        ac-min-length="2">
       </material-autocomplete> 
 ```
 ### Description of attributes
