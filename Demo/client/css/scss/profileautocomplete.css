@@ -1,0 +1,90 @@
+.acDirectiveAutocompleteProfile {
+  position: relative; }
+  .acDirectiveAutocompleteProfile .row {
+    margin-bottom: 1px; }
+  .acDirectiveAutocompleteProfile .progress {
+    margin: 0;
+    height: 2px; }
+  .acDirectiveAutocompleteProfile #acForm {
+    padding: 0;
+    position: relative; }
+    .acDirectiveAutocompleteProfile #acForm .text-input-wrapper input {
+      padding: 0 0;
+      margin: 0 0;
+      font: inherit;
+      width: 80%; }
+    .acDirectiveAutocompleteProfile #acForm .clearBtn {
+      cursor: pointer;
+      color: #888;
+      font-size: 23px;
+      position: absolute;
+      top: 4px;
+      right: 20%; }
+    .acDirectiveAutocompleteProfile #acForm .clearBtn:hover {
+      color: #000; }
+    .acDirectiveAutocompleteProfile #acForm input[type] {
+      margin-bottom: 0px !important; }
+    .acDirectiveAutocompleteProfile #acForm label {
+      left: 0; }
+  .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile {
+    position: absolute;
+    width: 80%;
+    max-height: 200px;
+    clear: both;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 99999; }
+    .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul {
+      max-height: 180px;
+      overflow-y: auto;
+      margin: 0; }
+      .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li {
+        box-sizing: border-box;
+        padding: 0 18px;
+        height: 90px;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        line-height: 100px;
+        display: block;
+        width: 100%; }
+        .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList {
+          position: relative;
+          height: 100px;
+          display: block; }
+          .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList .imageProfile {
+            position: relative;
+            float: left;
+            height: 65px;
+            width: 65px;
+            top: 15px;
+            right: 10px; }
+            .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList .imageProfile .profileImage {
+              height: 60px;
+              width: 60px;
+              border-radius: 40%; }
+          .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList .userProfile {
+            position: relative;
+            float: left;
+            top: -70px;
+            padding: 50px;
+            height: 160px;
+            right: 50px; }
+            .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList .userProfile .userName {
+              top: -10px;
+              position: relative;
+              height: 30px; }
+            .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li .mainList .userProfile .userEmail {
+              top: -30px;
+              position: relative;
+              height: 30px; }
+        .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li:hover {
+          background-color: #eeeeee; }
+        .acDirectiveAutocompleteProfile .acDropdownAutocompleteProfile ul li.selected {
+          background-color: #eeeeee; }

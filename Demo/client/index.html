@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Autocomplete</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/autocomplete.css">
+  <link rel="stylesheet" href="css/colorautocomplete.css">
+  <link rel="stylesheet" href="css/profileautocomplete.css">
+</head>
+<body ng-app="app">
+<div class="row">
+  <div class="col s2">
+    <ul class="tabs">
+      <li class="tab"><a class="active" href="#test1">SELL</a></li>
+    </ul>
+    <div id="test1" class="col s12">
+      <ul class="collapsible" data-collapsible="accordion">
+
+        <li>
+          <div class="collapsible-header"><i class="material-icons">view_list</i>Products</div>
+          <div class="collapsible-body">
+            <div class="collection">
+              <a ui-sref="newproduct" class="collection-item">New</a>
+              <a ui-sref="productlist" class="collection-item">Existing</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">A</i>
+            <a ui-sref="autoComplete" class="collection-item">Autocomplete</a></div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col s10">
+    <div ui-view></div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/lb-services.js"></script>
+<script src="autocomplete/autocomplete.js"></script>
+<script src="autocomplete/autocomplete.controller.js"></script>
+<script src="autocomplete/autocomplete.directive.js"></script>
+<script src="js/addAutocomplete.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/productcontroller.js"></script>
+</body>
+
+</html>

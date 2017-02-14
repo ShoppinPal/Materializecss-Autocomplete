@@ -1,0 +1,53 @@
+<div class="acDirectiveAutocompleteProfile"  id="acDirective {{ac.autocompleteId}}">
+    <div class="row">
+        <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()" ng-click="ac.positionDropdown()" >
+            <span class="text-input-wrapper">
+            <input id="autocomplete {{ac.autocompleteId}}"
+                   name="autocompleteProfile"
+                   type="text"
+                   ng-model="ac.searchText"
+                   ng-focus="ac.focus($event)"
+                   ng-blur="ac.blur($event)"
+                    ng-keydown="ac.keydown($event)"
+                   class="validate"
+                   ng-minlength="ac.minLength">
+                 <span id="clear {{ac.autocompleteId}}"class="clearBtn" ng-if="ac.searchText != ''" title="Clear" ng-click="ac.clearValue()">&times;</span>
+                <label for="autocomplete" id="labelAutocomplet" >{{ac.inputName}}</label></span>
+        </div>
+    </div>
+    <div class="progress" ng-show="ac.loading">
+        <div class="indeterminate"></div>
+    </div>
+  <div class="mainDropdownDiv row" ng-hide="ac.hidden" ng-mouseenter="ac.onListEnter()" ng-mouseleave="ac.onListLeave()" ng-mouseup="ac.onMouseup()">
+      <div id="acDropdown {{ac.autocompleteId}}" class="acDropdownAutocompleteProfile s12">
+            <ul id="{{ac.autocompleteId}}" class="dropupMenu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                <li class="autocompleteLI waves-effect"
+                ng-repeat="item in ac.itemList | filter:(!ac.remoteMethod ? ac.searchText  : '')"
+                    ng-click="ac.selectItem(item)"
+                    ng-class="{'selected': $index === ac.index }"
+                    ng-if="ac.searchText !== ''">
+                    <div class="mainList">
+                        <div class="imageProfile">
+                            <img class ="profileImage"  ng-src="{{item[ac.displayPicture]}}"/>
+                        </div>
+                        <div class="userProfile md-list-item-text layout-column">
+                            <div class="userName">
+                                <p><b>{{item[ac.displayProperty]}}</b></p>
+                            </div>
+                            <div class="userEmail">
+                                <p>{{item[ac.displayEmail]}}</p>
+                                <!--<p>{{item.email}}</p>-->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                 <li class="waves-effect"
+                    ng-hide="ac.hidden"
+                    ng-if=" ac.itemList.length == 0">
+                       Your search "{{ac.searchText}}"   Not Found
+                </li>
+               
+            </ul>
+        </div>
+  </div>
+</div>

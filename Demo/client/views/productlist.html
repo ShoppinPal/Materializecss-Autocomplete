@@ -1,0 +1,12 @@
+<div class="collection waves-color-demo" ng-controller="productlistController">
+  <div class="row">
+    <div class="col s6">
+      <div class="collection-item"><strong>Product Name</strong></div>
+      <div ng-repeat="product in allProducts" class="collection-item">{{product.name}}</div>
+    </div>
+    <div class="col s6">
+      <div class="collection-item"><strong>Product Color</strong></div>
+      <div ng-repeat="product in allProducts" class="collection-item">{{product.color}}</div>
+    </div>
+  </div>
+</div>
