@@ -19,6 +19,7 @@
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^1.0.1"
   },
+  
   "devDependencies": {
     "eslint": "^2.13.1",
     "eslint-config-loopback": "^4.0.0",
