@@ -25,8 +25,12 @@ Features:
 Download the code, and include the autocomplete.min.js file in your page. Then add the material.autocomplte module to your Angular App file
 
 **1. Download via npm or bower**
+
+
 `bower install materialized.autocomplte --save`
+
 Or
+
 `npm install materialized.autocomplte --save`
 
 **2. Link the files in the page header**
