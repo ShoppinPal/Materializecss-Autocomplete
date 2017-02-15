@@ -6,9 +6,11 @@ To see a demo go here: https://shoppinpalautocomplete.herokuapp.com/#/auto
 
 Features:
 * custom template support
-* can show top suggestion as a hint (i.e. background text)
+* can show suggestion as a hint 
 * keyboard and mouse control
 * works in legacy browsers
+
+**Requirements:** AngularJS **1.4.x**
 
 # installation 
 ============
