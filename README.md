@@ -37,6 +37,13 @@ For the simple Autocomplete template
       </material-autocomplete> 
 ```
 
+### Demo screenShots
+![screen shot 2017-01-25 at 1 21 51 am](https://cloud.githubusercontent.com/assets/24220012/22264264/5afdb872-e29d-11e6-99cf-6e53d0de925d.png)
+![screen shot 2017-01-25 at 1 20 59 am](https://cloud.githubusercontent.com/assets/24220012/22264262/57b14ec2-e29d-11e6-9e83-7f331223172a.png)
+![screen shot 2017-01-25 at 1 21 34 am](https://cloud.githubusercontent.com/assets/24220012/22264263/591adb70-e29d-11e6-9862-8ca586b82cd0.png)
+![screen shot 2017-01-25 at 1 22 20 am](https://cloud.githubusercontent.com/assets/24220012/22264273/5fc74378-e29d-11e6-9728-1da41b3bde49.png)
+![screen shot 2017-01-25 at 1 37 23 am](https://cloud.githubusercontent.com/assets/24220012/22264679/e1f3af48-e29e-11e6-962a-9895cbf00b14.png)
+
 ### Local Usage 
 For the color Autocomplete template 
 
@@ -53,6 +60,8 @@ For the color Autocomplete template
         ac-template-style="colorTemplate">
       </material-autocomplete>
 ```
+
+
 
 
 For the profile Autocomplete template 
@@ -108,11 +117,6 @@ repo's directory:
 
 ### Demo 
 
-###1. simple Autocomplete
-![screen shot 2017-01-25 at 1 21 51 am](https://cloud.githubusercontent.com/assets/24220012/22264264/5afdb872-e29d-11e6-99cf-6e53d0de925d.png)
-![screen shot 2017-01-25 at 1 20 59 am](https://cloud.githubusercontent.com/assets/24220012/22264262/57b14ec2-e29d-11e6-9e83-7f331223172a.png)
-![screen shot 2017-01-25 at 1 21 34 am](https://cloud.githubusercontent.com/assets/24220012/22264263/591adb70-e29d-11e6-9862-8ca586b82cd0.png)
-![screen shot 2017-01-25 at 1 22 20 am](https://cloud.githubusercontent.com/assets/24220012/22264273/5fc74378-e29d-11e6-9728-1da41b3bde49.png)
-![screen shot 2017-01-25 at 1 37 23 am](https://cloud.githubusercontent.com/assets/24220012/22264679/e1f3af48-e29e-11e6-962a-9895cbf00b14.png)
+
 
 ###2. Color Autocomplete
