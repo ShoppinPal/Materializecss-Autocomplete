@@ -38,6 +38,8 @@ For the simple Autocomplete template
 ```
 
 Demo screenShots:
+
+
 ![screen shot 2017-01-25 at 1 21 51 am](https://cloud.githubusercontent.com/assets/24220012/22264264/5afdb872-e29d-11e6-99cf-6e53d0de925d.png)
 ![screen shot 2017-01-25 at 1 20 59 am](https://cloud.githubusercontent.com/assets/24220012/22264262/57b14ec2-e29d-11e6-9e83-7f331223172a.png)
 ![screen shot 2017-01-25 at 1 21 34 am](https://cloud.githubusercontent.com/assets/24220012/22264263/591adb70-e29d-11e6-9862-8ca586b82cd0.png)
@@ -61,6 +63,8 @@ Demo screenShots:
       </material-autocomplete>
 ```
 Demo screenShots:
+
+
 ![screen shot 2017-02-15 at 7 18 35 pm](https://cloud.githubusercontent.com/assets/24220012/22977171/960f7f5a-f3b3-11e6-8dd1-5e26edf6c1b9.png)
 ![screen shot 2017-02-15 at 7 20 09 pm](https://cloud.githubusercontent.com/assets/24220012/22977242/d22e31ac-f3b3-11e6-8fcf-add52b2d1f62.png)
 
@@ -81,6 +85,8 @@ Demo screenShots:
 
 ```
 Demo screenShots:
+
+
 ![screen shot 2017-02-15 at 7 22 01 pm](https://cloud.githubusercontent.com/assets/24220012/22977303/1835d380-f3b4-11e6-8e53-71dc0e99f2b0.png)
 ![screen shot 2017-02-15 at 7 23 38 pm](https://cloud.githubusercontent.com/assets/24220012/22977351/4bc7412a-f3b4-11e6-8e92-591336228130.png)
 ![screen shot 2017-02-15 at 7 24 43 pm](https://cloud.githubusercontent.com/assets/24220012/22977377/6fdb079a-f3b4-11e6-9109-4f644a2f5039.png)
