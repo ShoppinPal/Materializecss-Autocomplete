@@ -4,6 +4,12 @@ A simple AngularJS directive that allows you create autocomplete input text that
 
 To see a demo go here: https://shoppinpalautocomplete.herokuapp.com/#/auto
 
+Features:
+* custom template support
+* can show top suggestion as a hint (i.e. background text)
+* keyboard and mouse control
+* works in legacy browsers
+
 # installation 
 ============
 ### Getting Started
