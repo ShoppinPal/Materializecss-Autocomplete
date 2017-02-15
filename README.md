@@ -19,7 +19,7 @@ Eg.
 ```
 ### Remote Usage 
 
-    For the simple Autocomplete template 
+For the simple Autocomplete template 
 ```html
       <material-autocomplete
         ac-input-name="Products"
@@ -35,7 +35,8 @@ Eg.
 ```
 
 ### Local Usage 
-      For the color Autocomplete template 
+For the color Autocomplete template 
+
 ```html
       <material-autocomplete
         ac-input-name="color"
@@ -51,7 +52,7 @@ Eg.
 ```
 
 
-      For the profile Autocomplete template 
+For the profile Autocomplete template 
 ```html
       <material-autocomplete
         ac-input-name="people"
