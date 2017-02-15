@@ -5,8 +5,8 @@ module.exports = function (grunt) {
             
             copy: {
               html: { 
-                src: 'demo/client/autocomplete/views/color.html',
-                dest: 'autocomplete/views/color.html',
+                src: 'demo/client/autocomplete/views/profile.html',
+                dest: 'autocomplete/views/profile.html',
               },
               css:{
                 src: 'demo/client/css/autocomplete.css',
