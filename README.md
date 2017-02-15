@@ -75,9 +75,9 @@ For the profile Autocomplete template
 | ac-items | `expression` | An expression in the format of `item in items` to iterate over matches for your search. |
 |ac-input-name|`string`|The name attribute given to the input element to be used with FormControlle.|
 |ac-selected-item|`object`| A model to be bind which is selected item.|
-|ac-display-property|`string`| A list of the item diaplay use property name |
-|ac-display-email|`string`|A list of the item display for the email address|
-|ac-display-picture|`string`|A list of the item display for the picture|
+|ac-display-property|`string`|  item diaplay use property name |
+|ac-display-email|`string`| item diaplay use property email |
+|ac-display-picture|`string`| item diaplay use property picture|
 |ac-display-color|`string`|A list of the item diaplay for the color code|
 |ac-selected-item-change|`expression`|An expression to be run each time a new item is selected.|
 |ac-search-text|`expression`| A model to bind the search query text to |
