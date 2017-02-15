@@ -125,10 +125,3 @@ repo's directory:
 3. grunt
 ```
 
-
-
-### Demo 
-
-
-
-###2. Color Autocomplete
