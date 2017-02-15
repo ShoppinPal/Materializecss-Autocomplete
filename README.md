@@ -28,9 +28,7 @@ Download the code, and include the autocomplete.min.js file in your page. Then a
 
 
 `bower install materialized.autocomplte --save`
-
 Or
-
 `npm install materialized.autocomplte --save`
 
 **2. Link the files in the page header**
