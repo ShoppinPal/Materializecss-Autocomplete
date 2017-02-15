@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             
             concat: {
               js: {
-                src: ['client/autocomplete/autocomplete.js','client/autocomplete/autocomplete.controller.js','autocomplete.directive.js'],
+                src: ['client/autocomplete/autocomplete.js','client/autocomplete/autocomplete.directive.js','client/autocomplete/autocomplete.controller.js'],
                 dest: 'client/dist/autocomplete.concat.js',
               }
             },
