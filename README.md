@@ -76,7 +76,7 @@ Eg.
 |ac-display-picture|`string`|A list of the item display for the picture|
 |ac-display-color|`string`|A list of the item diaplay for the color code|
 |ac-selected-item-change|`expression`|An expression to be run each time a new item is selected.|
-|ac-search-text|`expression`| A model to bind the search query text to |
+|ac-search-text|`expression`| A model to bind the search query text |
 |ac-remote-method|`expression`|Handle the searchText result and provide the result|
 |ac-place-holder|`string`|Secondary Placeholder text that will display after label move|
 |ac-show-input-name|`string`|Input text for the hiding secondary palceholder|
