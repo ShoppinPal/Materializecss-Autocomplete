@@ -24,7 +24,7 @@ module.exports = function (grunt) {
               },
               target: {
                 files: {
-                  'autocomplete/css/autocomplete.min.css': ['demo/client/css/*.css']
+                  'autocomplete/css/autocomplete.min.css': ['Demo/client/css/*.css']
                 }
               }
             },
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             jshint: {
               files: [
                 'Gruntfile.js',
-                'demo/client/*.js'
+                'Demo/client/*.js'
               ],
               options: {
                 jshintrc: true
@@ -45,29 +45,29 @@ module.exports = function (grunt) {
                   sourceMapName: 'autocomplete/aautocomplete.min.map'
                 },
                 js: {
-                src: ['demo/client/dist/*.js'],
+                src: ['Demo/client/dist/*.js'],
                 dest: 'autocomplete/autocomplete.min.js'
               },
 
             },
             watch: { // Compile everything into one task with Watch Plugin
               css: {
-                files: 'client/scss/*.scss',
+                files: 'Demo/client/scss/*.scss',
 
                 tasks: ['sass']
               },
               js: {
-                files: 'client/**/*.js',
+                files: 'Demo/client/**/*.js',
                 tasks: ['uglify']
               },
 
               cssmin:{
-                files :['client/css/*.css'],
+                files :['Demo/client/css/*.css'],
                 tasks:['cssmin']
               },
               compass: {
                 files: [
-                  'client/scss/*.scss',
+                  'Demo/client/scss/*.scss',
                 ],
                 tasks: ['compass']
               },
