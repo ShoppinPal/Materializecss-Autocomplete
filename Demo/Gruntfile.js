@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 },
                 js: {
                 src: ['client/dist/*.js'],
-                dest: 'client/autocomplete/autocomplete.min.js'
+                dest: 'autocomplete/autocomplete.min.js'
               },
 
             },
