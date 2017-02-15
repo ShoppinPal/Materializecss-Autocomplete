@@ -2,12 +2,15 @@
 ============
 A simple AngularJS directive that allows you create autocomplete input text that list of the data either from a server or local variable
 
+To see a demo go here: https://shoppinpalautocomplete.herokuapp.com/#/auto
 
 # installation 
 ============
 `bower install materialized.autocomplte --save`
 Or
 `npm install materialized.autocomplte --save`
+
+
 
 
 ### Getting Started
