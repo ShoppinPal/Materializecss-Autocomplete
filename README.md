@@ -33,6 +33,38 @@ Eg.
         ac-min-length="2">
       </material-autocomplete> 
 ```
+      For the color Autocomplete template 
+```html
+      <material-autocomplete
+        ac-input-name="color"
+        ac-items="test.color"
+        ac-display-property="name"
+        ac-display-color="color"
+        ac-selected-item-change="test.fetchColorlist(test.colorLis)"
+        ac-search-text="test.searchCol"
+        ac-min-length="1"
+        ac-place-holder=" &#128269; &nbsp; &nbsp; Color Autocomplete "
+        ac-template-style="colorTemplate">
+      </material-autocomplete>
+```
+
+      For the profile Autocomplete template 
+```html
+      <material-autocomplete
+        ac-input-name="people"
+        ac-items="test.people"
+        ac-display-property="name"
+        ac-display-email="email"
+        ac-display-picture="picture"
+        ac-search-text="test.searchPeople"
+        ac-min-length="1"
+        ac-selected-item-change="test.fetchPeopleList(test.profileList)"
+        ac-place-holder=" &#128269; &nbsp; &nbsp; Profile Autocomplete "
+        ac-template-style="profileTemplate">
+      </material-autocomplete>
+
+```
+
 ### Description of attributes
 | Parameter | Type | Description | Binding |
 | :------------- |:-------------| :----- | :-----| 
@@ -44,12 +76,13 @@ Eg.
 |ac-search-text|`expression`| A model to bind the search query text to |=|
 |ac-remote-method|`expression`|Handle the searchText result and provide the result|@|
 |ac-place-holder|`string`|Secondary Placeholder text that will display after label move|@|
-|ac-input-minlength|`number`| The minimum length for the input's value for validation|@|
 |ac-show-input-name|`string`|Input text for the hiding secondary palceholder|=|
 |ac-dropdown-items|`expression`|For the calculate dropdown height |=|
 |ac-clear-button|`expression`|Clear the inputtext if selected value is there|=|
 |ac-min-length|`number`|Specifies the minimum length of text before autocomplete will make suggestions|=|
-
+|ac-display-email|`string`|A list of the item display for the email address|@|
+|ac-display-picture|`string`|A list of the item display for the picture|@|
+|ac-display-color|`string`|A list of the item diaplay for the color code|@|
 
 
 ### Running test suite
