@@ -6,20 +6,29 @@ To see a demo go here: https://shoppinpalautocomplete.herokuapp.com/#/auto
 
 # installation 
 ============
+### Getting Started
+Download the code, and include the autocomplete.min.js file in your page. Then add the material.autocomplte module to your Angular App file
+
+**1. Download via npm or bower**
 `bower install materialized.autocomplte --save`
 Or
 `npm install materialized.autocomplte --save`
 
-
-
-
-### Getting Started
-Download the code, and include the autocomplete.min.js file in your page. Then add the material.autocomplte module to your Angular App file
-Eg.
-
+**2. Link the files in the page header**
 ```html
+<script src="autocomplete/autocomplete.min.js"></script>
+<link rel="stylesheet" href="autocomplete/autocomplete.css">
+<link rel="stylesheet" href="autocomplete/colorautocomplete.css">
+<link rel="stylesheet" href="autocomplete/profileautocomplete.css">
+```
+
+
+**3. Include the module as a dependency in your app**
+
+```javascript
  var module = angular.module('testing', ['material.autocomplete']);
 ```
+
 ### Remote Usage 
 
 For the simple Autocomplete template 
