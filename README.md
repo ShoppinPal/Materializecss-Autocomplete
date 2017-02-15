@@ -17,8 +17,8 @@ Eg.
 ```html
  var module = angular.module('testing', ['material.autocomplete']);
 ```
+### Remote Usage 
 
-### Local Usage 
     For the simple Autocomplete template 
 ```html
       <material-autocomplete
@@ -33,6 +33,8 @@ Eg.
         ac-min-length="2">
       </material-autocomplete> 
 ```
+
+### Local Usage 
       For the color Autocomplete template 
 ```html
       <material-autocomplete
@@ -48,7 +50,7 @@ Eg.
       </material-autocomplete>
 ```
 
-### Remote Usage 
+
       For the profile Autocomplete template 
 ```html
       <material-autocomplete
