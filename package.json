@@ -1,0 +1,35 @@
+{
+  "name": "materialize.autocomplete",
+  "version": "1.0.0",
+  "description": "angularjs autocomplete",
+  "main": "autocomplete/autocomplete.min.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pravinjadhav7/Autocomplete.git"
+  },
+  "keywords": [
+    "html",
+    "javasctipt"
+  ],
+  "author": "Pravin jadhav <pravinjadhav762@gmail.com> (http://pravinjadhav762.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pravinjadhav7/Autocomplete/issues"
+  },
+  "homepage": "https://github.com/pravinjadhav7/Autocomplete#readme",
+  "dependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {}
+}

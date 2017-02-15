@@ -4,10 +4,9 @@ module.exports = function (grunt) {
             pkg: grunt.file.readJSON('package.json'),
             
             copy: {
-              html: {
-              
-                src: 'demo/client/autocomplete/views/autocomplete.html',
-                dest: 'autocomplete/views/autocomplete.html',
+              html: { 
+                src: 'demo/client/autocomplete/views/color.html',
+                dest: 'autocomplete/views/color.html',
               },
               css:{
                 src: 'demo/client/css/autocomplete.css',
