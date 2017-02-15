@@ -9,8 +9,8 @@ module.exports = function (grunt) {
                 dest: 'autocomplete/views/profile.html',
               },
               css:{
-                src: 'demo/client/css/autocomplete.css',
-                dest:'autocomplete/css/autocomplete.css'
+                src: 'demo/client/css/profileautocomplete.css',
+                dest:'autocomplete/css/profileautocomplete.css'
               },
               js:{
                   src:'demo/client/dist/autocomplete.concat.js',
