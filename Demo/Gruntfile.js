@@ -16,8 +16,8 @@ module.exports = function (grunt) {
                 dest: 'autocomplete/views/autocomplete.html',
               },
               css:{
-                src: 'client/css/autocomplete.css',
-                dest:'autocomplete/css/autocomplete.css'
+                src: 'client/css/profileautocomplete.css',
+                dest:'autocomplete/css/profileautocomplete.css'
               },
               js:{
                   src:'client/dist/autocomplete.concat.js',
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 },
                 js: {
                 src: ['client/dist/*.js'],
-                dest: 'autocomplete/autocomplete.min.js'
+                dest: 'client/autocomplete/autocomplete.min.js'
               },
 
             },
