@@ -5,10 +5,17 @@ A simple AngularJS directive that allows you create autocomplete input text that
 To see a demo go here: https://shoppinpalautocomplete.herokuapp.com/#/auto
 
 Features:
-* custom template support
-* can show suggestion as a hint 
-* keyboard and mouse control
-* works in legacy browsers
+* custom template support.
+* can show suggestion as a hint .
+* keyboard and mouse control.
+* works in legacy browsers.
+* Auto match.
+* Clear on selection: when you select an item, input field is cleared.
+* custom selection of the templete ```simpleTemplete``` , ```profileTemplete``` and ```colorTemplate```.
+* Blur event handling.
+* Show scrollbar.
+* Show all items.
+* input minimum length to display ```itemList```.
 
 **Requirements:** AngularJS **1.4.x**
 
@@ -36,6 +43,8 @@ Or
 ```javascript
  var module = angular.module('testing', ['material.autocomplete']);
 ```
+###Methods
+
 
 ### Remote Usage 
 
