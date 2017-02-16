@@ -32,6 +32,7 @@ Or
 `npm install materialized.autocomplete --save`
 
 **2. Link the files in the page header**
+
 For bower installation:
 
 ```html
