@@ -32,11 +32,19 @@ Or
 `npm install materialized.autocomplete --save`
 
 **2. Link the files in the page header**
+For bower installation:
+
 ```html
-<script src="autocomplete/autocomplete.min.js"></script>
-<link rel="stylesheet" href="autocomplete/css/autocomplete.min.css">
+<script src="bower_components/materialized.autocomplete/autocomplete/autocomplete.min.js"></script>
+<link rel="stylesheet" href="bower_components/materialized.autocomplete/autocomplete/css/autocomplete.min.css">
 ```
 
+For npm installation
+
+```html
+<script src="node_modules/materialized.autocomplete/autocomplete/autocomplete.min.js"></script>
+<link rel="stylesheet" href="node_modules/materialized.autocomplete/autocomplete/css/autocomplete.min.css">
+```
 
 **3. Include the module as a dependency in your app**
 
