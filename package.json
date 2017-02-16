@@ -1,6 +1,6 @@
 {
   "name": "materialized.autocomplete",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "angularjs autocomplete",
   "main": "autocomplete/autocomplete.min.js",
   "directories": {
