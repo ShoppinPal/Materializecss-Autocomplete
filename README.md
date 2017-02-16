@@ -34,9 +34,7 @@ Or
 **2. Link the files in the page header**
 ```html
 <script src="autocomplete/autocomplete.min.js"></script>
-<link rel="stylesheet" href="autocomplete/autocomplete.css">
-<link rel="stylesheet" href="autocomplete/colorautocomplete.css">
-<link rel="stylesheet" href="autocomplete/profileautocomplete.css">
+<link rel="stylesheet" href="autocomplete/css/autocomplete.min.css">
 ```
 
 
