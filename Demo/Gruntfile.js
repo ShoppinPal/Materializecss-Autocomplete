@@ -31,7 +31,7 @@ module.exports = function (grunt) {
               },
               target: {
                 files: {
-                  'autocomplete/css/autocomplete.min.css': ['client/css/*.css']
+                  'autocomplete/css/autocomplete.min.css': ['client/css/autocomplete.css','client/css/colorautocomplete.css','client/css/profileautocomplete.css']
                 }
               }
             },
