@@ -11,7 +11,6 @@
     "javasctipt"
   ],
   "homepage": "https://github.com/ShoppinPal/AutoComplete",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",

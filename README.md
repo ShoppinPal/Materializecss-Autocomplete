@@ -90,7 +90,6 @@ Demo screenShots:
         ac-items="test.color"
         ac-display-property="name"
         ac-display-color="color"
-        ac-selected-item-change="test.fetchColorlist(test.colorLis)"
         ac-search-text="test.searchCol"
         ac-min-length="1"
         ac-place-holder=" &#128269; &nbsp; &nbsp; Color Autocomplete "
@@ -113,7 +112,6 @@ Demo screenShots:
         ac-display-picture="picture"
         ac-search-text="test.searchPeople"
         ac-min-length="1"
-        ac-selected-item-change="test.fetchPeopleList(test.profileList)"
         ac-place-holder=" &#128269; &nbsp; &nbsp; Profile Autocomplete "
         ac-template-style="profileTemplate">
       </material-autocomplete>
