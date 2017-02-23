@@ -31,12 +31,23 @@
           input[type] {
               margin-bottom: 0px !important;
           }
+          input[type].valid {
+                  border-bottom: 1px solid#000000;
+                  box-shadow:none !important;
+            }
+          
           label {
               left: 0;
 
           }
+          .errorMsg {
+                position: absolute;
+                top: 35px;
+                font-size: 13px;
+                color: red;
+                right: 0;
+            }
   }
-
 
     .acDropdownAutocomplete {
     position: absolute;

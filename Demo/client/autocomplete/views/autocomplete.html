@@ -1,8 +1,11 @@
+<form name="searchAutocomplete">
 <div class="acDirectiveAutocomplete" id="acDirective {ac.autocompleteId}}" >
     <div class="row">
-        <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()" ng-click="ac.positionDropdown()" >
+        <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()" ng-click="ac.positionDropdown()"
+            ng-class="{error: searchAutocomplete.autocomplete.$touched && searchAutocomplete.autocomplete.$invalid }">
+
             <span class="text-input-wrapper">
-            <input id="autocomplete{{ac.autocompleteId}}"
+            <input id="autocomplete {{ac.autocompleteId}}"
                    name="autocomplete"
                    type="text"
                    ng-model="ac.searchText"
@@ -11,9 +14,13 @@
                    ng-keydown="ac.keydown($event)"
                    class="validate"
                    ng-minlength="ac.minLength"
-                   ng-disabled="ac.isDisabled">
+                   ng-disabled="ac.isDisabled"
+                   required>
                  <span id="clear {{ac.autocompleteId}}" class="clearBtn" ng-if="ac.searchText != ''" title="Clear" ng-click="ac.clearValue()">&times;</span>
                 <label for="autocomplete" id="labelAutocomplet" >{{ac.inputName}}</label></span>
+                <p class="no-margin errorMsg" 
+               ng-show="searchAutocomplete.autocomplete.$touched && searchAutocomplete.autocomplete.$error.required">*This is
+                required</p>
         </div>
     </div>
     <div class="progress" ng-show="ac.loading">
@@ -44,3 +51,4 @@
         </div>
     </div>
 </div>
+</form>
