@@ -1,96 +1,89 @@
 module.exports = function (grunt) {
 
-          grunt.initConfig({
-            pkg: grunt.file.readJSON('package.json'),
-            
-            copy: {
-              html: { 
-                src: 'demo/client/autocomplete/views/profile.html',
-                dest: 'autocomplete/views/profile.html',
-              },
-              css:{
-                src: 'demo/client/css/profileautocomplete.css',
-                dest:'autocomplete/css/profileautocomplete.css'
-              },
-              js:{
-                  src:'demo/client/dist/autocomplete.concat.js',
-                  dest:'autocomplete/autocomplete.js'
-              }
-            },
-            cssmin:{
-              options: {
-                shorthandCompacting: false,
-                roundingPrecision: -1
-              },
-              target: {
-                files: {
-                  'autocomplete/css/autocomplete.min.css': ['Demo/client/css/*.css']
-                }
-              }
-            },
-            // Tasks
-            jshint: {
-              files: [
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
+        /**
+         * Todo : implement html min and image min
+         */
+
+        clean: ['dist'],
+        jshint: {
+            files: [
                 'Gruntfile.js',
-                'Demo/client/*.js'
-              ],
-              options: {
+                'src/js/*.js'
+            ],
+            options: {
                 jshintrc: true
-              }
-            },
-           
-            uglify: { 
-                options: {
-                  sourceMap: true,
-                  sourceMapName: 'autocomplete/aautocomplete.min.map'
-                },
-                js: {
-                src: ['Demo/client/dist/*.js'],
-                dest: 'autocomplete/autocomplete.min.js'
-              },
-
-            },
-            watch: { // Compile everything into one task with Watch Plugin
-              css: {
-                files: 'Demo/client/scss/*.scss',
-
-                tasks: ['sass']
-              },
-              js: {
-                files: 'Demo/client/**/*.js',
-                tasks: ['uglify']
-              },
-
-              cssmin:{
-                files :['Demo/client/css/*.css'],
-                tasks:['cssmin']
-              },
-              compass: {
-                files: [
-                  'Demo/client/scss/*.scss',
-                ],
-                tasks: ['compass']
-              },
-              jshint: {
-                files: [
-                  'Gruntfile.js',
-                  'client/*.js',
-                ],
-                tasks: ['jshint'],
-                options: {
-                  reload: true
-                }
-              }
             }
-  });
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  
-  grunt.registerTask('default', ['copy','cssmin','uglify','jshint','watch']);
+        },
+        compass: {
+            dist: {
+                options: {
+                    sassDir: 'src/scss',
+                    cssDir: 'src/css',
+                }
+            }
+        },
+        concat: {
+            options: {
+                banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */'
+            },
+            dist: {
+                src: ['src/js/autocomplete.js', 'src/js/autocomplete.directive.js', 'src/js/autocomplete.controller.js'],
+                dest: 'dist/js/<%= pkg.name %>.js'
+            }
+        },
+        uglify: {
+            options: {
+                sourceMap: true,
+                beautify: true,
+                banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */'
+            },
+            jsminify: {
+                src: ['dist/js/<%= pkg.name %>.js'],
+                dest: 'dist/js/<%= pkg.name %>.min.js'
+            }
+        },
+        copy: {
+            html: {
+                expand: true,
+                cwd: 'src/views/',
+                src: ['**'],
+                dest: 'dist/views/',
+            },
+            css: {
+
+                src: 'src/css/*.css',
+                dest: 'dist/css/<%= pkg.name %>.css'
+            },
+        },
+        cssmin: {
+            cssminify: {
+                src: 'dist/css/<%= pkg.name %>.css',
+                dest: 'dist/css/<%= pkg.name %>.min.css'
+            }
+        },
+        watch: {
+            dist: {
+                files: ['Gruntfile.js', 'src/js/*.js', 'src/scss/*.scss', 'src/views/*.html'],
+                tasks: ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy', 'cssmin']
+            }
+        }
+
+    });
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy', 'cssmin', 'watch']);
 };
 
 

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/autocomplete.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+</head>
+<body ng-app="acDemo">
+<div ng-controller="acController" style="width: 50%">
+    <h1>Hello {{name}}</h1>
+
+    <h5>Autocomplete for the color template selection </h5><br>
+    <material-autocomplete
+            ac-Id="1"
+            ac-input-name="colors"
+            ac-selected-item="selectedColor"
+            ac-items="colors"
+            ac-display-property="name"
+            ac-display-color="hexcode">
+    </material-autocomplete>
+    <br>
+    <h5>Autocomplete for the produtcs template selection </h5><br>
+    <material-autocomplete
+            ac-Id="1"
+            ac-input-name="products"
+            ac-selected-item="selectedProduct"
+            ac-items="products"
+            ac-display-property="name">
+    </material-autocomplete>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="./../../dist/js/materialized.autocomplete.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
