@@ -1,14 +1,12 @@
 (function () {
     'use strict';
     var MaterialAutocomplete = function () {
-        var templateUrl;
         var jsFile = 'materialized.autocomplete.js';
         var bu2 = document.querySelector("script[src$='" + jsFile + "']");
         var currentScriptPath = bu2.src;
         var baseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/', currentScriptPath.lastIndexOf('/') - 1));
 
-        templateUrl = baseUrl + '/views/list.html';
-        var cssUrl = baseUrl + '/css/materialized.autocomplete.css';
+        var listView = baseUrl + '/views/list.html';
 
         return {
             restrict: 'E',
@@ -33,7 +31,7 @@
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl: templateUrl,
+            templateUrl: listView,
         };
     };
 

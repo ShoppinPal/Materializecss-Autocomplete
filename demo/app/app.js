@@ -7,7 +7,7 @@ var myController = function ($scope) {
     $scope.name = 'varun';
 
     $scope.colors = [
-        {name: "green", hexcode: "#2AFDD4"},
+        {name: "maroon", hexcode: "#2AFDD4"},
         {name: "red", hexcode: "#BD477C"},
         {name: "pink", hexcode: "#FA2D82"},
         {name: "orange", hexcode: "orange"},

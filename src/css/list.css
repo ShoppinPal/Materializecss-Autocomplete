@@ -72,13 +72,13 @@
   z-index: 99999;
 }
 /* line 66, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete ul {
+.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu {
   max-height: 200px;
   overflow-y: auto;
   margin: 0;
 }
 /* line 70, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete ul li {
+.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI {
   box-sizing: border-box;
   padding: 0 15px;
   height: 40px;
@@ -90,11 +90,11 @@
   display: block;
   width: 100%;
 }
-/* line 81, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete ul li:hover {
+/* line 101, ../scss/list.scss */
+.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI:hover {
   background-color: #eeeeee;
 }
-/* line 84, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete ul li.selected {
+/* line 104, ../scss/list.scss */
+.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI.selected {
   background-color: #eeeeee;
 }

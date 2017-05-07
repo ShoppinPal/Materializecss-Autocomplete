@@ -28,7 +28,18 @@
                         ng-repeat="item in ac.itemList | filter: (!ac.remoteMethod ? ac.searchText  : '' )"
                         ng-click="ac.selectItem(item)"
                         ng-class="{'selected': $index === ac.index }">
-                        {{item[ac.displayProperty]}}
+                        <div class="mainColorList" ng-if="ac.displayColor">
+                            <div class="colorCode"
+                                 ng-style="{'background-color': item[ac.displayColor]}"
+                                 style="float: left;height: 20px;width: 20px;border-radius: 100%">
+                            </div>
+                            <div class="colorName">
+                                {{item[ac.displayProperty]}}
+                            </div>
+                        </div>
+                        <div ng-if="!ac.displayColor">
+                            {{item[ac.displayProperty]}}
+                        </div>
                     </li>
                     <li class="waves-effect"
                         ng-hide="ac.hidden"
