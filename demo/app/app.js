@@ -32,11 +32,12 @@ var myController = function ($scope) {
 
 
     $scope.people = [
-        {name: "Pravin Jadhav", email: "pravin@shoppinpal.com", picture: "../autocomplete/images/pravin.jpg"},
-        {name: "Aquid Shahwar", email: "aquid@shoppinpal.com", picture: "../autocomplete/images/aquid.jpg"},
-        {name: "Harshad Yoavla", email: "harshad@shoppinpal.com", picture: "../autocomplete/images/harshad.jpeg"},
-        {name: "Kamal Kahthwani", email: "kamal@shoppinpal.com", picture: "../autocomplete/images/kamal.png"},
-        {name: "Sayan Bhattacharya", email: "sayan@shoppinpal.com", picture: "../autocomplete/images/sayan.jpeg"}
+        {name: "Pravin Jadhav", nickname: "PJ", email: "pravin@shoppinpal.com", picture: "images/pravin.jpg"},
+        {name: "Varun Sukheja", nickname: "VS", email: "varun@shoppinpal.com", picture: "",color:'red'},
+        {name: "Aquid Shahwar", nickname: "AS", email: "", picture: "images/aquid.jpg"},
+        {name: "Harshad Yoavla", nickname: "", email: "harshad@shoppinpal.com", picture: "images/harshad.jpeg"},
+        {name: "Kamal Kahthwani", nickname: "KK", email: "kamal@shoppinpal.com", picture: "images/kamal.png"},
+        {name: "Sayan Bhattacharya", nickname: "SB", email: "sayan@shoppinpal.com", picture: "images/sayan.jpeg"}
     ];
 
 

@@ -37,7 +37,31 @@
                                 {{item[ac.displayProperty]}}
                             </div>
                         </div>
-                        <div ng-if="!ac.displayColor">
+                        <!--<div class="mainList" ng-if="ac.displayEmail">-->
+                        <!--&lt;!&ndash;<div class="imageProfile">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img class="profileImage" ng-src="{{item[ac.displayPicture]}}"/>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--<div class="userProfile md-list-item-text layout-column">-->
+                        <!--<div class="userName">-->
+                        <!--<p><b>{{item[ac.displayProperty]}}</b></p>-->
+                        <!--</div>-->
+                        <!--<div class="userEmail">-->
+                        <!--<p>{{item[ac.displayEmail]}}</p>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="collection" ng-if="ac.displayEmail">
+                            <div class="collection-item avatar">
+                                <!--<img ng-src="./images/aquid.jpg" alt="" class="circle">-->
+                                <span class="title">Title</span>
+                                <p>First Line <br>
+                                    Second Line
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div ng-if="!ac.displayColor && !ac.displayEmail">
                             {{item[ac.displayProperty]}}
                         </div>
                     </li>

@@ -7,6 +7,8 @@
         var baseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/', currentScriptPath.lastIndexOf('/') - 1));
 
         var listView = baseUrl + '/views/list.html';
+        var listView2 = baseUrl + '/views/list2.html';
+        var profileView = baseUrl + '/views/profile.html';
 
         return {
             restrict: 'E',
@@ -18,8 +20,12 @@
                 placeHolder: '=?acPlaceHolder',
                 selectedItem: '=acSelectedItem',
                 searchText: '=?acSearchText',
-                displayProperty: '@acDisplayProperty',
+                displayProperty1: '@acDisplayProperty1',
+                displayProperty2: '@acDisplayProperty2',
+                displayProperty3: '@acDisplayProperty3',
                 displayColor: '@acDisplayColor',
+                displayPicture: '@acDisplayPicture',
+                isMultiValued: '=acIsMultiValued',
                 uniqueDisplayProperty: '=?acUniqueDisplayProperty',
                 itemList: '=?acItems',
                 remoteMethod: '@?acRemoteMethod',
@@ -31,7 +37,7 @@
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl: listView,
+            templateUrl: listView2,
         };
     };
 

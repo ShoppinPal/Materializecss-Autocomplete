@@ -65,6 +65,7 @@
             if (self.selectedItem && self.displayProperty) {
                 self.searchText = self.selectedItem[self.displayProperty];
             }
+
         };
 
         /**

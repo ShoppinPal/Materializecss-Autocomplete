@@ -57,44 +57,24 @@
   right: 0;
 }
 /* line 52, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete {
+.acDirectiveAutocomplete #acDropdown {
   position: absolute;
   width: 100%;
-  max-height: 200px;
-  clear: both;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-  color: #666;
-  font-size: 14px;
-  font-weight: 400;
-  z-index: 99999;
+  z-index: 10;
 }
-/* line 66, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu {
+/* line 56, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul {
   max-height: 200px;
   overflow-y: auto;
   margin: 0;
 }
-/* line 70, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI {
-  box-sizing: border-box;
-  padding: 0 15px;
-  height: 40px;
-  cursor: pointer;
-  outline: none;
-  box-shadow: none;
-  border: none;
-  line-height: 40px;
+/* line 60, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li {
   display: block;
-  width: 100%;
 }
-/* line 101, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI:hover {
-  background-color: #eeeeee;
-}
-/* line 104, ../scss/list.scss */
-.acDirectiveAutocomplete .acDropdownAutocomplete .dropupMenu .autocompleteLI.selected {
-  background-color: #eeeeee;
+/* line 62, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li .displayColor {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
 }
