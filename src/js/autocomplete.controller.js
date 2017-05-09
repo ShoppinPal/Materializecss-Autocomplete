@@ -153,7 +153,7 @@
 
 
         self.selectItem = function (item) {
-            self.searchText = item[self.displayProperty];
+            self.searchText = item[self.displayProperty1];
             self.selectedItem = item;
             self.hidden = shouldHide();
         };
@@ -250,9 +250,9 @@
             self.index = -1;
             // do nothing on init
             if (searchText === previousSearchText) return;
-            else if (self.selectedItem && self.displayProperty) {
+            else if (self.selectedItem && self.displayProperty1) {
                 setLoading(false);
-                if (self.selectedItem[self.displayProperty] !== searchText) {
+                if (self.selectedItem[self.displayProperty1] !== searchText) {
                     self.selectedItem = null;
                     self.hidden = shouldHide();
                 }
@@ -269,12 +269,12 @@
          */
         function selectedItemChange(selectedItem, previousSelectedItem) {
             if (selectedItem) {
-                if (self.displayProperty) {
-                    self.searchText = selectedItem[self.displayProperty];
+                if (self.displayProperty1) {
+                    self.searchText = selectedItem[self.displayProperty1];
                 }
             }
             else if (previousSelectedItem && self.searchText) {
-                if (previousSelectedItem[self.displayProperty] === self.searchText) {
+                if (previousSelectedItem[self.displayProperty1] === self.searchText) {
                     self.searchText = '';
                 }
             }
@@ -379,15 +379,15 @@
         }
 
         /**
-         * This function check for result uniqueness on displayProperty params and return unique array
+         * This function check for result uniqueness on displayProperty1 params and return unique array
          * @param results
          * @returns {Array}
          */
         function handleUniqueResult(results) {
             var res = [], flag = {};
             for (var i = 0; i < results.length; i++) {
-                if (flag[results[i][self.displayProperty]]) continue;
-                flag[results[i][self.displayProperty]] = true;
+                if (flag[results[i][self.displayProperty1]]) continue;
+                flag[results[i][self.displayProperty1]] = true;
                 res.push(results[i]);
             }
             return res;
@@ -398,9 +398,9 @@
          * @param results Retrieved results
          */
         function handleResults(results) {
-            // check if uniqueDisplayProperty is set
+            // check if uniquedisplayProperty1 is set
             // then filter the result to uniqueness
-            if (self.uniqueDisplayProperty)
+            if (self.uniquedisplayProperty1)
                 results = handleUniqueResult(results);
             self.itemList = results;
             self.hidden = shouldHide();
