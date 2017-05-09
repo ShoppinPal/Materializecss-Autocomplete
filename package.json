@@ -1,8 +1,8 @@
 {
-  "name": "materialized.autocomplete",
-  "version": "1.0.2",
+  "name": "materializecss-autocomplete",
+  "version": "1.0.0",
   "description": "angularjs autocomplete",
-  "main": "autocomplete/autocomplete.min.js",
+  "main": "dist/js/materialized.autocomplete.min.js",
   "directories": {
     "test": "test"
   },
@@ -32,7 +32,7 @@
     "javascript",
     "css"
   ],
-  "author": "Pravin jadhav <pravinjadhav762@gmail.com> (http://pravinjadhav762.com/)",
+  "author": "Shoppinpal",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ShoppinPal/AutoComplete/issues"
