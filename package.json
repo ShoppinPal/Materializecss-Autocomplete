@@ -1,8 +1,8 @@
 {
-  "name": "materialized.autocomplete",
+  "name": "materializecss-autocomplete",
   "version": "1.0.0",
   "description": "angularjs autocomplete",
-  "main": "dist/js/materialized.autocomplete.min.js",
+  "main": "dist/js/materializecss-autocomplete.min.js",
   "directories": {
     "test": "test"
   },
