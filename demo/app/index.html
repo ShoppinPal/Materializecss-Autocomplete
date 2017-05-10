@@ -8,7 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" href="./../../dist/css/materialized.autocomplete.css">
+    <link rel="stylesheet" href="./../../dist/css/materializecss-autocomplete.min.css">
 
 </head>
 <body ng-app="acDemo">
@@ -33,7 +33,7 @@
     <material-autocomplete
             ac-id="2"
             ac-input-name="people"
-            ac-selected-item="selectedPeople"
+            ac-selected-item="selectedPeopleWithImage"
             ac-items="people"
             ac-display-property1="name"
             ac-display-property2="nickname"
@@ -43,13 +43,13 @@
     >
     </material-autocomplete>
     <br>
-    Selected People : {{selectedPeople}}
+    Selected People : {{selectedPeopleWithImage}}
     <br>
     <h5>Autocomplete for the profile template selection without image </h5><br>
     <material-autocomplete
-            ac-id="2"
+            ac-id="3"
             ac-input-name="people"
-            ac-selected-item="selectedPeople"
+            ac-selected-item="selectedPeopleWithoutimage"
             ac-items="people"
             ac-display-property1="name"
             ac-display-property2="nickname"
@@ -58,11 +58,11 @@
     >
     </material-autocomplete>
     <br>
-    Selected People : {{selectedPeople}}
+    Selected People : {{selectedPeopleWithoutimage}}
     <br>
     <h5>Autocomplete for the produtcs template selection </h5><br>
     <material-autocomplete
-            ac-id="3"
+            ac-id="4"
             ac-input-name="products"
             ac-selected-item="selectedProduct"
             ac-items="products"
@@ -73,7 +73,7 @@
     <br>
     <h5>Autocomplete for the Foods template selection </h5><br>
     <material-autocomplete
-            ac-id="4"
+            ac-id="5"
             ac-input-name="foods"
             ac-selected-item="selectedFood"
             ac-items="foodList"
@@ -85,7 +85,7 @@
     <br>
     <h5>Autocomplete for the cars template selection </h5><br>
     <material-autocomplete
-            ac-id="5"
+            ac-id="6"
             ac-input-name="cars"
             ac-selected-item="selectedCar"
             ac-items="cars"
@@ -97,20 +97,20 @@
     <br>
     <h5>Autocomplete for Full profile template selection without image </h5><br>
     <material-autocomplete
-            ac-id="6"
+            ac-id="7"
             ac-input-name="people"
-            ac-selected-item="selectedPeople"
+            ac-selected-item="selectedProfile"
             ac-items="fullProfileList"
             ac-display-property1="name"
             ac-display-property2="gender"
             ac-display-property3="email"
             ac-display-sub-property1="age"
             ac-display-sub-property3="phone"
-    ac-is-multi-valued=true
+            ac-is-multi-valued=true
     >
     </material-autocomplete>
     <br>
-    Selected People : {{selectedPeople}}
+    Selected People : {{selectedProfile}}
     <br>
 </div>
 <br>
@@ -118,8 +118,8 @@
 <br>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-<script src="./../../dist/js/materialized.autocomplete.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="./../../dist/js/materializecss-autocomplete.js"></script>
 <script src="./app.js"></script>
 </body>
 </html>

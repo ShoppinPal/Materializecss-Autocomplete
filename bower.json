@@ -1,9 +1,9 @@
 {
-  "name": "materialized.autocomplete",
+  "name": "materializecss-autocomplete",
   "description": "angularjs autocomplete",
-  "main": "autocomplete/autocomplete.min.js",
+  "main": "dist/js/materializecss-autocomplete.min.js",
   "authors": [
-    "Pravin Jadhav <pravinjadhav762@gmail.com> (http://pravinjadhav762.com/)"
+    "Shoppinpal"
   ],
   "license": "MIT",
   "keywords": [

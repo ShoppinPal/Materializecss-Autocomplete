@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     var MaterialAutocomplete = function () {
-        var jsFile = 'materialized.autocomplete.js';
+        var jsFile = 'materializecss-autocomplete.js';
         var bu2 = document.querySelector("script[src$='" + jsFile + "']");
         var currentScriptPath = bu2.src;
         var baseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/', currentScriptPath.lastIndexOf('/') - 1));
