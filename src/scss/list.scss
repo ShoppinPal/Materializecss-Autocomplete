@@ -1,0 +1,71 @@
+.acDirectiveAutocomplete {
+  position: relative;
+  .row {
+    margin-bottom: 1px;
+  }
+
+  .progress {
+    margin: 0;
+    height: 2px;
+  }
+  #acForm {
+    padding: 0;
+    position: relative;
+
+    .text-input-wrapper input {
+      padding: 0 0;
+      margin: 0 0;
+      font: inherit;
+    }
+    .clearBtn {
+      cursor: pointer;
+      color: #888;
+      font-size: 23px;
+      position: absolute;
+      top: 4px;
+      right: 0px;
+    }
+    .clearBtn:hover {
+      color: #000;
+    }
+    input[type] {
+      margin-bottom: 0px !important;
+    }
+    input[type].valid {
+      border-bottom: 1px solid #000000;
+      box-shadow: none !important;
+    }
+
+    label {
+      left: 0;
+
+    }
+    .errorMsg {
+      position: absolute;
+      top: 35px;
+      font-size: 13px;
+      color: red;
+      right: 0;
+    }
+  }
+
+  #acDropdown {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    .dropdown-ul {
+      max-height: 200px;
+      overflow-y: auto;
+      margin: 0;
+      .dropdown-li {
+        display: block;
+        .displayColor {
+          height: 20px;
+          width: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+

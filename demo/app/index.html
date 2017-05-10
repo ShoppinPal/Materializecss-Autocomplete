@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="./../../dist/css/materialized.autocomplete.css">
+
+</head>
+<body ng-app="acDemo">
+<div ng-controller="acController" style="width: 50%;margin-left: 20px">
+    <h1>Hello {{name}}</h1>
+
+    <h5>Autocomplete for the color template selection </h5><br>
+    <material-autocomplete
+            ac-id="1"
+            ac-input-name="colors"
+            ac-selected-item="selectedColor"
+            ac-items="colorList"
+            ac-display-property1="colorName"
+            ac-display-color="colorCode"
+            ac-is-multi-valued=false
+    >
+    </material-autocomplete>
+    <br>
+    Selected Color : {{selectedColor}}
+    <br>
+    <h5>Autocomplete for the profile template selection </h5><br>
+    <material-autocomplete
+            ac-id="2"
+            ac-input-name="people"
+            ac-selected-item="selectedPeople"
+            ac-items="people"
+            ac-display-property1="name"
+            ac-display-property2="nickname"
+            ac-display-property3="email"
+            ac-display-picture="picture"
+            ac-is-multi-valued=true
+    >
+    </material-autocomplete>
+    <br>
+    Selected People : {{selectedPeople}}
+    <br>
+    <h5>Autocomplete for the profile template selection without image </h5><br>
+    <material-autocomplete
+            ac-id="2"
+            ac-input-name="people"
+            ac-selected-item="selectedPeople"
+            ac-items="people"
+            ac-display-property1="name"
+            ac-display-property2="nickname"
+            ac-display-property3="email"
+            ac-is-multi-valued=true
+    >
+    </material-autocomplete>
+    <br>
+    Selected People : {{selectedPeople}}
+    <br>
+    <h5>Autocomplete for the produtcs template selection </h5><br>
+    <material-autocomplete
+            ac-id="3"
+            ac-input-name="products"
+            ac-selected-item="selectedProduct"
+            ac-items="products"
+            ac-display-property1="name">
+    </material-autocomplete>
+    <br>
+    Selected Product : {{selectedProduct}}
+    <br>
+    <h5>Autocomplete for the Foods template selection </h5><br>
+    <material-autocomplete
+            ac-id="4"
+            ac-input-name="foods"
+            ac-selected-item="selectedFood"
+            ac-items="foodList"
+            ac-display-property1="food"
+            ac-display-sub-property1="price">
+    </material-autocomplete>
+    <br>
+    Selected Food : {{selectedFood}}
+    <br>
+    <h5>Autocomplete for the cars template selection </h5><br>
+    <material-autocomplete
+            ac-id="5"
+            ac-input-name="cars"
+            ac-selected-item="selectedCar"
+            ac-items="cars"
+            ac-display-property1="name"
+            ac-display-sub-property1="models">
+    </material-autocomplete>
+    <br>
+    Selected Car : {{selectedCar}}
+    <br>
+    <h5>Autocomplete for Full profile template selection without image </h5><br>
+    <material-autocomplete
+            ac-id="6"
+            ac-input-name="people"
+            ac-selected-item="selectedPeople"
+            ac-items="fullProfileList"
+            ac-display-property1="name"
+            ac-display-property2="gender"
+            ac-display-property3="email"
+            ac-display-sub-property1="age"
+            ac-display-sub-property3="phone"
+    ac-is-multi-valued=true
+    >
+    </material-autocomplete>
+    <br>
+    Selected People : {{selectedPeople}}
+    <br>
+</div>
+<br>
+<br>
+<br>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="./../../dist/js/materialized.autocomplete.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

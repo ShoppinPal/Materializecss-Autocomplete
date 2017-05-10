@@ -1,23 +1,28 @@
 {
   "name": "materialized.autocomplete",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "angularjs autocomplete",
-  "main": "autocomplete/autocomplete.min.js",
+  "main": "dist/js/materialized.autocomplete.min.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "1.1.0",
+    "grunt-contrib-compass": "1.1.1",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "2.1.0",
+    "grunt-contrib-imagemin": "1.0.1",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-uglify": "2.3.0",
+    "grunt-contrib-watch": "1.0.0",
+    "materialize-css": "^0.98.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShoppinPal/AutoComplete.git"
@@ -27,7 +32,7 @@
     "javascript",
     "css"
   ],
-  "author": "Pravin jadhav <pravinjadhav762@gmail.com> (http://pravinjadhav762.com/)",
+  "author": "Shoppinpal",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ShoppinPal/AutoComplete/issues"
