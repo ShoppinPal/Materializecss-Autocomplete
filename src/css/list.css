@@ -1,0 +1,80 @@
+/* line 1, ../scss/list.scss */
+.acDirectiveAutocomplete {
+  position: relative;
+}
+/* line 3, ../scss/list.scss */
+.acDirectiveAutocomplete .row {
+  margin-bottom: 1px;
+}
+/* line 7, ../scss/list.scss */
+.acDirectiveAutocomplete .progress {
+  margin: 0;
+  height: 2px;
+}
+/* line 11, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm {
+  padding: 0;
+  position: relative;
+}
+/* line 15, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .text-input-wrapper input {
+  padding: 0 0;
+  margin: 0 0;
+  font: inherit;
+}
+/* line 20, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .clearBtn {
+  cursor: pointer;
+  color: #888;
+  font-size: 23px;
+  position: absolute;
+  top: 4px;
+  right: 0px;
+}
+/* line 28, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .clearBtn:hover {
+  color: #000;
+}
+/* line 31, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm input[type] {
+  margin-bottom: 0px !important;
+}
+/* line 34, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm input[type].valid {
+  border-bottom: 1px solid #000000;
+  box-shadow: none !important;
+}
+/* line 39, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm label {
+  left: 0;
+}
+/* line 43, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .errorMsg {
+  position: absolute;
+  top: 35px;
+  font-size: 13px;
+  color: red;
+  right: 0;
+}
+/* line 52, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+/* line 56, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+}
+/* line 60, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li {
+  display: block;
+}
+/* line 62, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li .displayColor {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}

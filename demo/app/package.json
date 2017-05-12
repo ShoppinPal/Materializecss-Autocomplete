@@ -1,0 +1,10 @@
+{
+  "name": "demo-materializecss-autocomplete",
+  "version": "1.0.0",
+  "description": "Angular demo for materializecss-autocomplete.",
+  "main": "",
+  "author": "Shoppinpal",
+  "dependencies": {
+    "materializecss-autocomplete": "^1.0.0"
+  }
+}

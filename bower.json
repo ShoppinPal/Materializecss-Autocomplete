@@ -1,21 +1,42 @@
 {
-  "name": "materialized.autocomplete",
+  "name": "materializecss-autocomplete",
+  "version": "1.0.2",
   "description": "angularjs autocomplete",
-  "main": "autocomplete/autocomplete.min.js",
+  "main": "dist/js/materializecss-autocomplete.min.js",
   "authors": [
-    "Pravin Jadhav <pravinjadhav762@gmail.com> (http://pravinjadhav762.com/)"
+    "Shoppinpal"
   ],
   "license": "MIT",
   "keywords": [
     "html",
     "javasctipt"
   ],
+  "dependencies": {
+    "materialize": "^0.98.2"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "1.1.0",
+    "grunt-contrib-compass": "1.1.1",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "2.1.0",
+    "grunt-contrib-imagemin": "1.0.1",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-uglify": "2.3.0",
+    "grunt-contrib-watch": "1.0.0"
+  },
   "homepage": "https://github.com/ShoppinPal/AutoComplete",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "demo",
+    ".sass-cache",
+    "src",
+    "npm-shrinkwrap.json",
+    "Gruntfile.js"
   ]
 }
