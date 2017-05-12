@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.0 - 2017-05-10 */(function () {
+/* materializecss-autocomplete - v1.0.0 - 2017-05-12 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
@@ -7,9 +7,17 @@
     'use strict';
     var MaterialAutocomplete = function () {
         var jsFile = 'materializecss-autocomplete.js';
-        var bu2 = document.querySelector("script[src$='" + jsFile + "']");
-        var currentScriptPath = bu2.src;
-        var baseUrl = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/', currentScriptPath.lastIndexOf('/') - 1));
+        var minifiedJsFile = 'materializecss-autocomplete.min.js';
+        var jsFileComponent = document.querySelector("script[src$='" + jsFile + "']");
+        var minfiedJsFileComponent = document.querySelector("script[src$='" + minifiedJsFile + "']");
+        var jsFilePath;
+        if (jsFileComponent) {
+            jsFilePath = jsFileComponent.src;
+        } else if (minfiedJsFileComponent) {
+            jsFilePath = minfiedJsFileComponent.src;
+        }
+
+        var baseUrl = jsFilePath.substring(0, jsFilePath.lastIndexOf('/', jsFilePath.lastIndexOf('/') - 1));
 
         var listView = baseUrl + '/views/list.html';
 
