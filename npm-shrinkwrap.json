@@ -1,6 +1,6 @@
 {
-  "name": "materialized.autocomplete",
-  "version": "1.0.2",
+  "name": "materializecss-autocomplete",
+  "version": "1.0.0",
   "dependencies": {
     "abbrev": {
       "version": "1.1.0",
@@ -149,8 +149,7 @@
     "block-stream": {
       "version": "0.0.9",
       "from": "block-stream@*",
-      "resolved": "https://registry.npmjs.org/block-stream/-/block-stream-0.0.9.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/block-stream/-/block-stream-0.0.9.tgz"
     },
     "body-parser": {
       "version": "1.14.2",
@@ -856,8 +855,7 @@
     "fstream": {
       "version": "1.0.11",
       "from": "fstream@>=1.0.10 <2.0.0",
-      "resolved": "https://registry.npmjs.org/fstream/-/fstream-1.0.11.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/fstream/-/fstream-1.0.11.tgz"
     },
     "function-bind": {
       "version": "1.1.0",
@@ -983,8 +981,7 @@
     "graceful-fs": {
       "version": "4.1.11",
       "from": "graceful-fs@>=4.1.2 <5.0.0",
-      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.11.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.1.11.tgz"
     },
     "graceful-readlink": {
       "version": "1.0.1",
@@ -1201,8 +1198,7 @@
     "hammerjs": {
       "version": "2.0.8",
       "from": "hammerjs@>=2.0.4 <3.0.0",
-      "resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.8.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.8.tgz"
     },
     "has-ansi": {
       "version": "2.0.0",
@@ -1333,8 +1329,7 @@
     "inherits": {
       "version": "2.0.3",
       "from": "inherits@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
     },
     "ini": {
       "version": "1.3.4",
@@ -1561,8 +1556,7 @@
     "jquery": {
       "version": "2.2.4",
       "from": "jquery@>=2.1.4 <3.0.0",
-      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz"
     },
     "js-yaml": {
       "version": "3.5.5",
@@ -1794,9 +1788,8 @@
     },
     "materialize-css": {
       "version": "0.98.2",
-      "from": "materialize-css@latest",
-      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.98.2.tgz",
-      "dev": true
+      "from": "materialize-css@>=0.98.2 <0.99.0",
+      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.98.2.tgz"
     },
     "maxmin": {
       "version": "2.1.0",
@@ -1870,13 +1863,11 @@
       "version": "0.5.1",
       "from": "mkdirp@>=0.5.0 <0.6.0",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz",
-      "dev": true,
       "dependencies": {
         "minimist": {
           "version": "0.0.8",
           "from": "minimist@0.0.8",
-          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
-          "dev": true
+          "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz"
         }
       }
     },
@@ -1921,8 +1912,7 @@
     "node-archiver": {
       "version": "0.3.0",
       "from": "node-archiver@>=0.3.0 <0.4.0",
-      "resolved": "https://registry.npmjs.org/node-archiver/-/node-archiver-0.3.0.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/node-archiver/-/node-archiver-0.3.0.tgz"
     },
     "node-status-codes": {
       "version": "1.0.0",
@@ -2264,8 +2254,7 @@
     "rimraf": {
       "version": "2.2.8",
       "from": "rimraf@>=2.2.8 <2.3.0",
-      "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz"
     },
     "sax": {
       "version": "1.2.2",
@@ -2462,8 +2451,7 @@
     "tar": {
       "version": "2.2.1",
       "from": "tar@>=2.2.1 <3.0.0",
-      "resolved": "https://registry.npmjs.org/tar/-/tar-2.2.1.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/tar/-/tar-2.2.1.tgz"
     },
     "tar-stream": {
       "version": "1.5.2",

@@ -4,7 +4,7 @@
 var myApp = angular.module('acDemo', ['material.autocomplete']);
 
 var myController = function ($scope) {
-    $scope.name = 'varun';
+    $scope.name = 'Materializecss-Autocomplete';
 
     $scope.colorList = [
         {colorName: "maroon", colorCode: "maroon"},
@@ -51,7 +51,6 @@ var myController = function ($scope) {
             name: "Varun Sukheja",
             nickname: "VS",
             email: "varun@shoppinpal.com",
-            // picture: "https://yt3.ggpht.com/-4sNEvCcERuQ/AAAAAAAAAAI/AAAAAAAAAAA/I6sSxupXGVQ/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
             picture: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAelAAAAJDQ5ZTE3YTAzLTk1ZDMtNGI0MS05ZmNiLTRkMjY5MGZmNWZhZg.jpg",
             color: 'red',
             sub1: 'VSSub1',

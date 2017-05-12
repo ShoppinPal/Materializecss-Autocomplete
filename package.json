@@ -1,6 +1,6 @@
 {
   "name": "materializecss-autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "angularjs autocomplete",
   "main": "dist/js/materializecss-autocomplete.min.js",
   "directories": {
@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "materialize-css": "^0.98.2"
+  },
   "devDependencies": {
     "grunt": "~1.0.1",
     "grunt-contrib-clean": "1.1.0",
@@ -20,9 +22,11 @@
     "grunt-contrib-imagemin": "1.0.1",
     "grunt-contrib-jshint": "1.1.0",
     "grunt-contrib-uglify": "2.3.0",
-    "grunt-contrib-watch": "1.0.0",
-    "materialize-css": "^0.98.2"
+    "grunt-contrib-watch": "1.0.0"
   },
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShoppinPal/AutoComplete.git"
