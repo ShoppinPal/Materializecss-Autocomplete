@@ -7,7 +7,10 @@ module.exports = function (grunt) {
          * Todo : implement html min and image min
          */
 
-        clean: ['dist'],
+        clean: {
+            dist: ['dist'],
+            lib: ['demo/client/lib']
+        },
         jshint: {
             files: [
                 'Gruntfile.js',
@@ -59,6 +62,12 @@ module.exports = function (grunt) {
                 src: 'src/css/*.css',
                 dest: 'dist/css/<%= pkg.name %>.css'
             },
+            lib: {
+                expand: true,
+                cwd: 'dist/',
+                src: ['**'],
+                dest: 'demo/client/lib/',
+            },
         },
         cssmin: {
             cssminify: {
@@ -69,7 +78,7 @@ module.exports = function (grunt) {
         watch: {
             dist: {
                 files: ['Gruntfile.js', 'src/js/*.js', 'src/scss/*.scss', 'src/views/*.html'],
-                tasks: ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy', 'cssmin']
+                tasks: ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib']
             }
         }
 
@@ -83,7 +92,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib', 'watch']);
 };
 
 
