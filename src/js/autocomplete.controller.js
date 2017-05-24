@@ -104,6 +104,37 @@
         };
 
         /**
+         *  clear the input text field using clear button Check clear button visble and hidden
+         */
+
+        function clearValue() {
+            setInputClearButton();
+            clearSelectedItem();
+        }
+
+        self.clearValue = clearValue;
+
+        /**
+         * Clears the selected item
+         */
+        function clearSelectedItem() {
+            self.searchText = [];
+        }
+
+
+        /**
+         * Clears the searchText value
+         */
+        function setInputClearButton() {
+            // self.searchText has a space character at the end, so we blank it one more time and then
+            self.element.input.blur();
+            self.element.input.value = null;
+            handleSearchText();
+            self.element.input.focus();
+        }
+
+
+        /**
          * Sets up any watchers used by autocomplete
          */
         function configureWatchers() {

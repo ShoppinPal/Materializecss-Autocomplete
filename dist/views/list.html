@@ -14,6 +14,8 @@
                        ng-disabled="ac.disableInput"
                        autocomplete="off"
                        class="validate">
+                <span id="clear {{ac.autocompleteId}}" class="clearBtn" ng-if="ac.searchText.length>0" title="Clear"
+                      ng-click="ac.clearValue()">&times;</span>
                 <label for="autocomplete-{{ac.id}}" ng-class="{'active': ac.searchText}">{{ac.inputName}}</label>
             </div>
         </div>

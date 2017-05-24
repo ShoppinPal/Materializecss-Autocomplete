@@ -80,8 +80,16 @@ module.exports = function (grunt) {
                 files: ['Gruntfile.js', 'src/js/*.js', 'src/scss/*.scss', 'src/views/*.html'],
                 tasks: ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib']
             }
+        },
+        run_node: {
+            start: {
+                options: {
+                    cwd: 'demo',
+                    detached: false
+                },
+                files: {src: ['demo/server/server.js']},
+            }
         }
-
     });
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compass');
@@ -91,8 +99,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-run-node');
 
-    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib', 'watch']);
+    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib', 'run_node', 'watch']);
 };
 
 
