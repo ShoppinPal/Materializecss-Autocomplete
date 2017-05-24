@@ -23,7 +23,7 @@
                 id: '@acId',
                 inputName: '@acInputName',
                 showInputName: '=?acShowInputName',
-                placeHolder: '=?acPlaceHolder',
+                placeHolder: '@?acPlaceHolder',
                 selectedItem: '=acSelectedItem',
                 searchText: '=?acSearchText',
                 displayProperty1: '@acDisplayProperty1',
