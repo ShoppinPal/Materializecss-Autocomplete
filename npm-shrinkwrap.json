@@ -1,6 +1,6 @@
 {
   "name": "materializecss-autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "dependencies": {
     "abbrev": {
       "version": "1.1.0",
@@ -1125,6 +1125,12 @@
         }
       }
     },
+    "grunt-run-node": {
+      "version": "0.1.7",
+      "from": "grunt-run-node@latest",
+      "resolved": "https://registry.npmjs.org/grunt-run-node/-/grunt-run-node-0.1.7.tgz",
+      "dev": true
+    },
     "gulp-decompress": {
       "version": "1.2.0",
       "from": "gulp-decompress@>=1.2.0 <2.0.0",
@@ -1787,9 +1793,9 @@
       "dev": true
     },
     "materialize-css": {
-      "version": "0.98.2",
-      "from": "materialize-css@>=0.98.2 <0.99.0",
-      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.98.2.tgz"
+      "version": "0.97.8",
+      "from": "materialize-css@>=0.97.7 <0.98.0",
+      "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.97.8.tgz"
     },
     "maxmin": {
       "version": "2.1.0",

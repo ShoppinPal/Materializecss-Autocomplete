@@ -6,7 +6,6 @@
 
                 <input id="autocomplete-{{ac.id}}"
                        type="text"
-                       placeholder="{{ac.placeholder}}"
                        ng-model="ac.searchText"
                        ng-focus="ac.focus($event)"
                        ng-blur="ac.blur($event)"
@@ -14,7 +13,9 @@
                        ng-disabled="ac.disableInput"
                        autocomplete="off"
                        class="validate">
-                <label for="autocomplete-{{ac.id}}" ng-class="{'active': ac.searchText}">{{ac.inputName}}</label>
+                <span id="clear {{ac.autocompleteId}}" class="clearBtn" ng-if="ac.searchText.length>0" title="Clear"
+                      ng-click="ac.clearValue()">&times;</span>
+                <label for="autocomplete-{{ac.id}}">{{ac.inputName}}</label>
             </div>
         </div>
         <div class="progress" ng-show="ac.loading">
