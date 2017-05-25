@@ -71,8 +71,17 @@
 /* line 60, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li {
   display: block;
+  border: none;
 }
-/* line 62, ../scss/list.scss */
+/* line 63, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li:hover {
+  background-color: #eeeeee;
+}
+/* line 66, ../scss/list.scss */
+.acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li.selected {
+  background-color: #eeeeee;
+}
+/* line 69, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li .displayColor {
   height: 20px;
   width: 20px;

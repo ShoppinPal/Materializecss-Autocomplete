@@ -1,6 +1,6 @@
 {
   "name": "materializecss-autocomplete",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "angularjs autocomplete",
   "main": "dist/js/materializecss-autocomplete.min.js",
   "directories": {
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "materialize-css": "^0.98.2"
+    "materialize-css": "^0.97.7"
   },
   "devDependencies": {
     "grunt": "~1.0.1",
@@ -22,7 +22,8 @@
     "grunt-contrib-imagemin": "1.0.1",
     "grunt-contrib-jshint": "1.1.0",
     "grunt-contrib-uglify": "2.3.0",
-    "grunt-contrib-watch": "1.0.0"
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-run-node": "0.1.7"
   },
   "files": [
     "dist/"
