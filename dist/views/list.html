@@ -2,7 +2,6 @@
     <div id="acDirective" class="acDirectiveAutocomplete">
         <div class="row">
             <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()">
-                <span class="text-input-wrapper"></span>
 
                 <input id="autocomplete-{{ac.id}}"
                        type="text"
@@ -16,6 +15,7 @@
                 <span id="clear {{ac.autocompleteId}}" class="clearBtn" ng-if="ac.searchText.length>0" title="Clear"
                       ng-click="ac.clearValue()">&times;</span>
                 <label for="autocomplete-{{ac.id}}">{{ac.inputName}}</label>
+                <span class="text-input-wrapper"></span>
             </div>
         </div>
         <div class="progress" ng-show="ac.loading">
@@ -44,8 +44,8 @@
                         </div>
                     </li>
 
-                    <li class="waves-effect"
-                        ng-if="!ac.itemList">
+                    <li class="collection-item  dropdown-li waves-effect"
+                        ng-if="ac.itemList.length<=0">
                         Your search "{{ac.searchText}}" Not Found
                     </li>
                 </ul>
