@@ -34,7 +34,6 @@
                 displaySubProperty3: '@?acDisplaySubProperty3',
                 displayColor: '@acDisplayColor',
                 displayPicture: '@acDisplayPicture',
-                isMultiValued: '=acIsMultiValued',
                 uniqueDisplayProperty: '=?acUniqueDisplayProperty',
                 itemList: '=?acItems',
                 remoteMethod: '@?acRemoteMethod',

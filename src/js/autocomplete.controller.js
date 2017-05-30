@@ -108,8 +108,8 @@
          */
 
         function clearValue() {
-            setInputClearButton();
             clearSelectedItem();
+            setInputClearButton();
         }
 
         self.clearValue = clearValue;
@@ -118,7 +118,7 @@
          * Clears the selected item
          */
         function clearSelectedItem() {
-            self.searchText = [];
+            self.searchText = '';
         }
 
 
@@ -429,9 +429,9 @@
          * @param results Retrieved results
          */
         function handleResults(results) {
-            // check if uniquedisplayProperty1 is set
+            // check if uniquedisplayProperty is set
             // then filter the result to uniqueness
-            if (self.uniquedisplayProperty1)
+            if (self.uniquedisplayProperty)
                 results = handleUniqueResult(results);
             self.itemList = results;
             self.hidden = shouldHide();
