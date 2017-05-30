@@ -118,8 +118,7 @@
          * Clears the selected item
          */
         function clearSelectedItem() {
-            self.selectedItem=null;
-            self.searchText='';
+            self.searchText = '';
         }
 
 

@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.3 - 2017-05-26 */(function () {
+/* materializecss-autocomplete - v1.0.4 - 2017-05-30 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
@@ -39,7 +39,6 @@
                 displaySubProperty3: '@?acDisplaySubProperty3',
                 displayColor: '@acDisplayColor',
                 displayPicture: '@acDisplayPicture',
-                isMultiValued: '=acIsMultiValued',
                 uniqueDisplayProperty: '=?acUniqueDisplayProperty',
                 itemList: '=?acItems',
                 remoteMethod: '@?acRemoteMethod',
@@ -179,8 +178,7 @@
          * Clears the selected item
          */
         function clearSelectedItem() {
-            self.selectedItem=null;
-            self.searchText='';
+            self.searchText = '';
         }
 
 
