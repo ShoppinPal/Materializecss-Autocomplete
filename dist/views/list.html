@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="collection-item  dropdown-li waves-effect"
-                        ng-if="ac.itemList.length<=0">
+                        ng-if="!ac.itemList && ac.searchText.length>=2">
                         Your search "{{ac.searchText}}" Not Found
                     </li>
                 </ul>

@@ -1,6 +1,6 @@
 {
   "ids": {
-    "product": 8
+    "product": 10
   },
   "models": {
     "product": {
@@ -10,7 +10,8 @@
       "4": "{\"name\":\"Fridge\",\"price\":12000,\"id\":4}",
       "5": "{\"name\":\"Macbook Air\",\"price\":55000,\"id\":5}",
       "6": "{\"name\":\"Macbook Pro\",\"price\":55000,\"id\":6}",
-      "7": "{\"name\":\"Macbook Pro\",\"price\":55000,\"id\":7}"
+      "7": "{\"name\":\"Macbook Pro\",\"price\":55000,\"id\":7}",
+      "9": "{\"name\":\"Bike\",\"price\":75000,\"id\":9}"
     }
   }
 }

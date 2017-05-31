@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.4 - 2017-05-30 */(function () {
+/* materializecss-autocomplete - v1.0.5 - 2017-05-31 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
@@ -489,9 +489,9 @@
          * @param results Retrieved results
          */
         function handleResults(results) {
-            // check if uniquedisplayProperty is set
+            // check if uniqueDisplayProperty is set
             // then filter the result to uniqueness
-            if (self.uniquedisplayProperty)
+            if (self.uniqueDisplayProperty)
                 results = handleUniqueResult(results);
             self.itemList = results;
             self.hidden = shouldHide();

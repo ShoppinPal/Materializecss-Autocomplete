@@ -27,7 +27,9 @@ var myController = function ($scope, Product) {
   $scope.colorList = [
     {colorName: "maroon", colorCode: "maroon"},
     {colorName: "aqua", colorCode: "#2AFDD4"},
+    {colorName: "aqua", colorCode: "#2AFDD4"},
     {colorName: "red", colorCode: "#BD477C"},
+    {colorName: "pink", colorCode: "#FA2D82"},
     {colorName: "pink", colorCode: "#FA2D82"},
     {colorName: "orange", colorCode: "orange"},
     {colorName: "purple", colorCode: "purple"},

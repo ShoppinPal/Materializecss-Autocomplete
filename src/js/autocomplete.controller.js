@@ -429,9 +429,9 @@
          * @param results Retrieved results
          */
         function handleResults(results) {
-            // check if uniquedisplayProperty is set
+            // check if uniqueDisplayProperty is set
             // then filter the result to uniqueness
-            if (self.uniquedisplayProperty)
+            if (self.uniqueDisplayProperty)
                 results = handleUniqueResult(results);
             self.itemList = results;
             self.hidden = shouldHide();
