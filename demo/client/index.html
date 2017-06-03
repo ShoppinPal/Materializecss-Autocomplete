@@ -16,116 +16,121 @@
 
   <h5>Autocomplete using remote method </h5><br>
   <material-autocomplete
-
     ac-id="0"
+    ac-minlength="4"
+    ac-unique-display-property=false
     ac-input-name="products"
     ac-selected-item="selectedItem"
     ac-display-property1="name"
     ac-place-holder="Enter Product name"
     ac-search-text="searchTextProduct"
     ac-remote-method="fetchDataFromServer(searchTextProduct)"
+    ac-required="true"
+    ac-selection-error-message="Please select any option"
+    ac-error-color="orange"
+    ac-success-color="blue"
   >
   </material-autocomplete>
 
-  <br>
-  Selected Product:{{selectedItem}}
+  <!--<br>-->
+  <!--Selected Product:{{selectedItem}}-->
 
 
-  <h5>Autocomplete for the color template selection </h5><br>
-  <material-autocomplete
-    ac-id="1"
-    ac-place-holder="Enter Color"
-    ac-input-name="colors"
-    ac-selected-item="selectedColor"
-    ac-items="colorList"
-    ac-display-property1="colorName"
-    ac-display-color="colorCode"
-  >
-  </material-autocomplete>
-  <br>
-  Selected Color : {{selectedColor}}
-  <br>
-  <h5>Autocomplete for the profile template selection </h5><br>
-  <material-autocomplete
-    ac-id="2"
-    ac-input-name="people"
-    ac-selected-item="selectedPeopleWithImage"
-    ac-items="people"
-    ac-display-property1="name"
-    ac-display-property2="nickname"
-    ac-display-property3="email"
-    ac-display-picture="picture"
-  >
-  </material-autocomplete>
-  <br>
-  Selected People : {{selectedPeopleWithImage}}
-  <br>
-  <h5>Autocomplete for the profile template selection without image </h5><br>
-  <material-autocomplete
-    ac-id="3"
-    ac-input-name="people"
-    ac-selected-item="selectedPeopleWithoutimage"
-    ac-items="people"
-    ac-display-property1="name"
-    ac-display-property2="nickname"
-    ac-display-property3="email"
-  >
-  </material-autocomplete>
-  <br>
-  Selected People : {{selectedPeopleWithoutimage}}
-  <br>
-  <h5>Autocomplete for the produtcs template selection </h5><br>
-  <material-autocomplete
-    ac-id="4"
-    ac-input-name="products"
-    ac-selected-item="selectedProduct"
-    ac-items="products"
-    ac-display-property1="name">
-  </material-autocomplete>
-  <br>
-  Selected Product : {{selectedProduct}}
-  <br>
-  <h5>Autocomplete for the Foods template selection </h5><br>
-  <material-autocomplete
-    ac-id="5"
-    ac-input-name="foods"
-    ac-selected-item="selectedFood"
-    ac-items="foodList"
-    ac-display-property1="food"
-    ac-display-sub-property1="price">
-  </material-autocomplete>
-  <br>
-  Selected Food : {{selectedFood}}
-  <br>
-  <h5>Autocomplete for the cars template selection </h5><br>
-  <material-autocomplete
-    ac-id="6"
-    ac-input-name="cars"
-    ac-selected-item="selectedCar"
-    ac-items="cars"
-    ac-display-property1="name"
-    ac-display-sub-property1="models">
-  </material-autocomplete>
-  <br>
-  Selected Car : {{selectedCar}}
-  <br>
-  <h5>Autocomplete for Full profile template selection without image </h5><br>
-  <material-autocomplete
-    ac-id="7"
-    ac-input-name="people"
-    ac-selected-item="selectedProfile"
-    ac-items="fullProfileList"
-    ac-display-property1="name"
-    ac-display-property2="gender"
-    ac-display-property3="email"
-    ac-display-sub-property1="age"
-    ac-display-sub-property3="phone"
+  <!--<h5>Autocomplete for the color template selection </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="1"-->
+    <!--ac-place-holder="Enter Color"-->
+    <!--ac-input-name="colors"-->
+    <!--ac-selected-item="selectedColor"-->
+    <!--ac-items="colorList"-->
+    <!--ac-display-property1="colorName"-->
+    <!--ac-display-color="colorCode"-->
+  <!--&gt;-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected Color : {{selectedColor}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for the profile template selection </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="2"-->
+    <!--ac-input-name="people"-->
+    <!--ac-selected-item="selectedPeopleWithImage"-->
+    <!--ac-items="people"-->
+    <!--ac-display-property1="name"-->
+    <!--ac-display-property2="nickname"-->
+    <!--ac-display-property3="email"-->
+    <!--ac-display-picture="picture"-->
+  <!--&gt;-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected People : {{selectedPeopleWithImage}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for the profile template selection without image </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="3"-->
+    <!--ac-input-name="people"-->
+    <!--ac-selected-item="selectedPeopleWithoutimage"-->
+    <!--ac-items="people"-->
+    <!--ac-display-property1="name"-->
+    <!--ac-display-property2="nickname"-->
+    <!--ac-display-property3="email"-->
+  <!--&gt;-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected People : {{selectedPeopleWithoutimage}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for the produtcs template selection </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="4"-->
+    <!--ac-input-name="products"-->
+    <!--ac-selected-item="selectedProduct"-->
+    <!--ac-items="products"-->
+    <!--ac-display-property1="name">-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected Product : {{selectedProduct}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for the Foods template selection </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="5"-->
+    <!--ac-input-name="foods"-->
+    <!--ac-selected-item="selectedFood"-->
+    <!--ac-items="foodList"-->
+    <!--ac-display-property1="food"-->
+    <!--ac-display-sub-property1="price">-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected Food : {{selectedFood}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for the cars template selection </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="6"-->
+    <!--ac-input-name="cars"-->
+    <!--ac-selected-item="selectedCar"-->
+    <!--ac-items="cars"-->
+    <!--ac-display-property1="name"-->
+    <!--ac-display-sub-property1="models">-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected Car : {{selectedCar}}-->
+  <!--<br>-->
+  <!--<h5>Autocomplete for Full profile template selection without image </h5><br>-->
+  <!--<material-autocomplete-->
+    <!--ac-id="7"-->
+    <!--ac-input-name="people"-->
+    <!--ac-selected-item="selectedProfile"-->
+    <!--ac-items="fullProfileList"-->
+    <!--ac-display-property1="name"-->
+    <!--ac-display-property2="gender"-->
+    <!--ac-display-property3="email"-->
+    <!--ac-display-sub-property1="age"-->
+    <!--ac-display-sub-property3="phone"-->
 
-  >
-  </material-autocomplete>
-  <br>
-  Selected People : {{selectedProfile}}
-  <br>
+  <!--&gt;-->
+  <!--</material-autocomplete>-->
+  <!--<br>-->
+  <!--Selected People : {{selectedProfile}}-->
+  <!--<br>-->
 </div>
 <br>
 <br>
@@ -133,7 +138,8 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.6.4/angular-messages.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.min.js"></script>
 <script src="lib/js/materializecss-autocomplete.js"></script>
 <script src="js/lb-services.js"></script>
