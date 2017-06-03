@@ -2,20 +2,29 @@
     <div id="acDirective" class="acDirectiveAutocomplete">
         <div class="row">
             <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()">
+                <div class="form-group"
+                     ng-class="{ 'has-error' : userForm.username.$invalid && searchAutocomplete.acInputField.$touched && !ac.selectedItem}">
+                    <input id="autocomplete-{{ac.id}}"
+                           name="acInputField"
+                           type="text"
+                           ng-model="ac.searchText"
+                           ng-focus="ac.focus($event)"
+                           ng-blur="ac.blur($event)"
+                           ng-keydown="ac.keydown($event)"
+                           ng-disabled="ac.disableInput"
+                           ng-required="!ac.selectedItem"
+                           autocomplete="off"
+                           class="ac-input"
+                           ng-style="ac.checkError()  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"
+                    >
+                    <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"
+                          class="clearBtn" title="Clear"
+                          ng-click="ac.clearValue()">&times;</span>
+                    <label for="autocomplete-{{ac.id}}" ng-class="{'active':(ac.searchText||ac.isInputFocus)}">{{ac.inputName}}</label>
 
-                <input id="autocomplete-{{ac.id}}"
-                       type="text"
-                       ng-model="ac.searchText"
-                       ng-focus="ac.focus($event)"
-                       ng-blur="ac.blur($event)"
-                       ng-keydown="ac.keydown($event)"
-                       ng-disabled="ac.disableInput"
-                       autocomplete="off"
-                       class="validate">
-                <span id="clear {{ac.autocompleteId}}" class="clearBtn" ng-if="ac.searchText.length>0" title="Clear"
-                      ng-click="ac.clearValue()">&times;</span>
-                <label for="autocomplete-{{ac.id}}">{{ac.inputName}}</label>
-                <span class="text-input-wrapper"></span>
+
+                    <span class="text-input-wrapper"></span>
+                </div>
             </div>
         </div>
         <div class="progress" ng-show="ac.loading">
@@ -23,9 +32,9 @@
         </div>
         <div class=" row" ng-hide="ac.hidden" ng-mouseenter="ac.onListEnter()"
              ng-mouseleave="ac.onListLeave()" ng-mouseup="ac.onMouseup()">
-
             <div id="acDropdown" class=" s12">
-                <ul class="collection dropdown-ul" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                <ul class="collection dropdown-ul" role="menu" aria-labelledby="simple-btn-keyboard-nav"
+                    ng-show="ac.itemList.length>0">
                     <li class="collection-item  dropdown-li waves-effect"
                         ng-repeat="item in ac.itemList | filter: (!ac.remoteMethod ? ac.searchText  : '' )"
                         ng-click="ac.selectItem(item)"
@@ -43,14 +52,19 @@
                         <div ng-if="item[ac.displayProperty3]">{{item[ac.displayProperty3]}}<span class="right">{{item[ac.displaySubProperty3]}}</span>
                         </div>
                     </li>
-
-                    <li class="collection-item  dropdown-li waves-effect"
-                        ng-if="ac.itemList.length<=0">
-                        Your search "{{ac.searchText}}" Not Found
+                </ul>
+                <ul class="collection dropdown-ul" role="menu" aria-labelledby="simple-btn-keyboard-nav"
+                    ng-hide="ac.itemList.length>0 || !ac.searchText">
+                    <li class="collection-item  dropdown-li waves-effect">
+                        Your search <b>"{{ac.searchText}}"</b> was not found
                     </li>
                 </ul>
             </div>
 
+        </div>
+        <div ng-show="ac.checkError()"
+             ng-style="ac.errorTextStyle(ac.errorColor)">
+            {{ac.selectionErrorMessage}}
         </div>
     </div>
 </form>

@@ -159,6 +159,8 @@
          */
         self.focus = function ($event) {
             // call the callback
+            self.isInputFocus = true;
+            self.isInputBlur = false;
             angular.isFunction(self.onFocusCb) && self.onFocusCb(); // jshint ignore:line
             self.setPlaceHolder();
             hasFocus = true;
@@ -173,6 +175,8 @@
          */
         self.blur = function ($event) {
             // call the callback
+            self.isInputFocus = false;
+            self.isInputBlur = true;
             angular.isFunction(self.onBlurCb) && self.onBlurCb(); // jshint ignore:line
             self.removePlaceHolder();
             hasFocus = false;
@@ -429,9 +433,9 @@
          * @param results Retrieved results
          */
         function handleResults(results) {
-            // check if uniquedisplayProperty is set
+            // check if uniqueDisplayProperty is set
             // then filter the result to uniqueness
-            if (self.uniquedisplayProperty)
+            if (self.uniqueDisplayProperty)
                 results = handleUniqueResult(results);
             self.itemList = results;
             self.hidden = shouldHide();
@@ -456,6 +460,52 @@
             return temp;
         }
 
+        /**
+         * This function gives style to error Text Message
+         * @param colorHashCode or color name
+         * @returns {Style}
+         */
+        self.errorTextStyle = function (errorColor) {
+            return {'color': errorColor};
+        };
+
+        /**
+         * This function gives style to Input border on error
+         * @param colorHashCode or color name
+         * @returns {Style}
+         */
+        self.errorInputStyle = function (errorColor) {
+            return {
+                'border-bottom-color': errorColor
+            };
+        };
+
+        /**
+         * This function gives style to Input border on success
+         * @param colorHashCode or color name
+         * @returns {Style}
+         */
+        self.successInputStyle = function (successColor) {
+            return {
+                'border-bottom-color': successColor
+            };
+        };
+
+        /**
+         * This function checks whether autocomplete is successfully validated
+         * @returns {boolean}
+         */
+        self.checkSuccess = function () {
+            return self.isInputFocus && self.selectedItem;
+        };
+
+        /**
+         * This function checks condition for error message to display
+         * @returns {boolean}
+         */
+        self.checkError = function () {
+            return self.required && self.isInputBlur && !self.selectedItem;
+        };
 
     };
 

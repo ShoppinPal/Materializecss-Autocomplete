@@ -37,13 +37,13 @@
   color: #000;
 }
 /* line 32, ../scss/list.scss */
-.acDirectiveAutocomplete #acForm input[type] {
+.acDirectiveAutocomplete #acForm .ac-input {
+  box-shadow: none !important;
   margin-bottom: 0px !important;
 }
 /* line 35, ../scss/list.scss */
-.acDirectiveAutocomplete #acForm input[type].valid {
+.acDirectiveAutocomplete #acForm .ac-input:focus, .acDirectiveAutocomplete #acForm .ac-input.valid {
   border-bottom: 1px solid #000000;
-  box-shadow: none !important;
 }
 /* line 40, ../scss/list.scss */
 .acDirectiveAutocomplete #acForm label {

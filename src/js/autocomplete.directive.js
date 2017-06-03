@@ -40,7 +40,13 @@
                 itemChange: '&?acSelectedItemChange',
                 disableInput: '=?acDisableInput',
                 onBlurCb: '&?acOnBlurCb',
-                onFocusCb: '&?acOnFocusCb'
+                onFocusCb: '&?acOnFocusCb',
+                minlength: '=?acMinlength',
+                required: '@?acRequired',
+                selectionErrorMessage: '@?acSelectionErrorMessage',
+                errorColor: '@?acErrorColor',
+                successColor: '@?acSuccessColor',
+                disableCrossIcon: '=?acDisableCrossIcon'
             },
             replace: true,
             controller: 'materialAutocompleteCntrl',

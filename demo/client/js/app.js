@@ -23,11 +23,12 @@ var myController = function ($scope, Product) {
       return Product.find().$promise;
     }
   };
-
   $scope.colorList = [
     {colorName: "maroon", colorCode: "maroon"},
     {colorName: "aqua", colorCode: "#2AFDD4"},
+    {colorName: "aqua", colorCode: "#2AFDD4"},
     {colorName: "red", colorCode: "#BD477C"},
+    {colorName: "pink", colorCode: "#FA2D82"},
     {colorName: "pink", colorCode: "#FA2D82"},
     {colorName: "orange", colorCode: "orange"},
     {colorName: "purple", colorCode: "purple"},
@@ -36,6 +37,13 @@ var myController = function ($scope, Product) {
     {colorName: "darkOliveGreen", colorCode: "#a2cd5a"},
     {colorName: "khakhi", colorCode: "#8b864e"}
   ];
+
+  // $scope.selectedItem = {
+  //   name: "Washing machine",
+  //   price: 5500,
+  //   id: 2
+  // };
+
 
   $scope.products = [
     {name: "TV", color: 'green'},

@@ -1,6 +1,6 @@
 {
   "name": "materializecss-autocomplete",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "angularjs autocomplete",
   "main": "dist/js/materializecss-autocomplete.min.js",
   "authors": [
@@ -27,6 +27,7 @@
     ".sass-cache",
     "src",
     "npm-shrinkwrap.json",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "_config.yml"
   ]
 }

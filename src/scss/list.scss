@@ -29,12 +29,12 @@
     .clearBtn:hover {
       color: #000;
     }
-    input[type] {
-      margin-bottom: 0px !important;
-    }
-    input[type].valid {
-      border-bottom: 1px solid #000000;
+    .ac-input {
       box-shadow: none !important;
+      margin-bottom: 0px !important;
+      &:focus, &.valid {
+        border-bottom: 1px solid #000000;
+      }
     }
 
     label {
@@ -58,7 +58,7 @@
       max-height: 200px;
       overflow-y: auto;
       margin: 0;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
       .dropdown-li {
         display: block;
         border: none;
