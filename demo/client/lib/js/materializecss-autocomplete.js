@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.6 - 2017-06-06 */(function () {
+/* materializecss-autocomplete - v1.0.6 - 2017-06-07 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
