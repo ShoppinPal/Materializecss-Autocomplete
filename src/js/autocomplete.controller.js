@@ -468,6 +468,14 @@
         self.errorTextStyle = function (errorColor) {
             return {'color': errorColor};
         };
+        /**
+         * This function gives style to success Text Message
+         * @param colorHashCode or color name
+         * @returns {Style}
+         */
+        self.errorTextStyle = function (successColor) {
+            return {'color': successColor};
+        };
 
         /**
          * This function gives style to Input border on error
@@ -476,7 +484,8 @@
          */
         self.errorInputStyle = function (errorColor) {
             return {
-                'border-bottom-color': errorColor
+                'border-bottom-color': errorColor,
+                'box-shadow': '0 1px 0 0 ' + errorColor
             };
         };
 
@@ -487,7 +496,8 @@
          */
         self.successInputStyle = function (successColor) {
             return {
-                'border-bottom-color': successColor
+                'border-bottom-color': successColor,
+                'box-shadow': '0 1px 0 0 ' + successColor
             };
         };
 
@@ -496,7 +506,7 @@
          * @returns {boolean}
          */
         self.checkSuccess = function () {
-            return self.isInputFocus && self.selectedItem;
+            return self.isInputFocus && self.selectedItem && !self.disableInput;
         };
 
         /**
@@ -504,7 +514,7 @@
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.required && self.isInputBlur && !self.selectedItem;
+            return self.required && self.isInputBlur && !self.selectedItem && !self.disableInput;
         };
 
     };

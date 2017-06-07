@@ -43,9 +43,9 @@
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
                 required: '@?acRequired',
-                selectionErrorMessage: '@?acSelectionErrorMessage',
-                errorColor: '@?acErrorColor',
-                successColor: '@?acSuccessColor',
+                selectionErrorMessage: '=?acSelectionErrorMessage',
+                errorColor: '=?acErrorColor',
+                successColor: '=?acSuccessColor',
                 disableCrossIcon: '=?acDisableCrossIcon'
             },
             replace: true,
