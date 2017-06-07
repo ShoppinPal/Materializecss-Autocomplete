@@ -7,6 +7,9 @@ var myController = function ($scope, Product) {
   $scope.name = 'Materializecss-Autocomplete';
 
 
+  $scope.errorColor='#BD477C';
+  $scope.successColor='#0CA506';
+
   $scope.fetchDataFromServer = function (searchquery) {
     if (searchquery) {
       return Product.find({
@@ -37,13 +40,6 @@ var myController = function ($scope, Product) {
     {colorName: "darkOliveGreen", colorCode: "#a2cd5a"},
     {colorName: "khakhi", colorCode: "#8b864e"}
   ];
-
-  // $scope.selectedItem = {
-  //   name: "Washing machine",
-  //   price: 5500,
-  //   id: 2
-  // };
-
 
   $scope.products = [
     {name: "TV", color: 'green'},

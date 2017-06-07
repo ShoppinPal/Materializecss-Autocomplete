@@ -29,24 +29,23 @@
     .clearBtn:hover {
       color: #000;
     }
+
     .ac-input {
-      box-shadow: none !important;
       margin-bottom: 0px !important;
       &:focus, &.valid {
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid #666;
+        box-shadow: none;
+        + label {
+          color: #666;
+        }
       }
     }
 
     label {
       left: 0;
-
     }
     .errorMsg {
       position: absolute;
-      top: 35px;
-      font-size: 13px;
-      color: red;
-      right: 0;
     }
   }
 
