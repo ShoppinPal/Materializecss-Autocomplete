@@ -1,11 +1,11 @@
-/* materializecss-autocomplete - v1.0.6 - 2017-06-07 */(function () {
+/* materializecss-autocomplete - v1.0.7 - 2017-06-08 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
 
 (function () {
     'use strict';
-    var MaterialAutocomplete = function () {
+    var MaterialAutocomplete = function ($timeout) {
         var jsFile = 'materializecss-autocomplete.js';
         var minifiedJsFile = 'materializecss-autocomplete.min.js';
         var jsFileComponent = document.querySelector("script[src$='" + jsFile + "']");
@@ -24,6 +24,7 @@
         return {
             restrict: 'E',
             scope: {},
+            require: ['^form'],
             bindToController: {
                 id: '@acId',
                 inputName: '@acInputName',
@@ -57,18 +58,29 @@
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
             templateUrl: listView,
+            link: function (scope, element, attrs, formCtrl) {
+                $timeout(function(){
+                    scope.parentForm = formCtrl;
+                    scope.$apply();
+                }, 10);
+            }
         };
     };
 
     angular.module('material.autocomplete')
-        .directive('materialAutocomplete', [MaterialAutocomplete]);
+        .directive('materialAutocomplete', ['$timeout', MaterialAutocomplete]);
 })();
 
 (function () {
     'use strict';
 
-    var MaterialAutocompleteCntrl = function ($scope, $element, $q) {
+    var MaterialAutocompleteCntrl = function ($scope, $element, $q, $timeout) {
         var self = this;
+
+        $timeout(function () {
+            self.parentForm = $scope.parentForm;
+        }, 20);
+
 
         /**
          * Common Keyboard actions and their associated keycode.
@@ -590,6 +602,7 @@
             '$scope',
             '$element',
             '$q',
+            '$timeout',
             MaterialAutocompleteCntrl
         ]);
 
