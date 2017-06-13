@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.7 - 2017-06-08 */(function () {
+/* materializecss-autocomplete - v1.0.7 - 2017-06-14 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
@@ -24,7 +24,7 @@
         return {
             restrict: 'E',
             scope: {},
-            require: ['^form'],
+            require: ['^?form'],
             bindToController: {
                 id: '@acId',
                 inputName: '@acInputName',

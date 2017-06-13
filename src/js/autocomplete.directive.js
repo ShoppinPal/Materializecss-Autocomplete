@@ -19,7 +19,7 @@
         return {
             restrict: 'E',
             scope: {},
-            require: ['^form'],
+            require: ['^?form'],
             bindToController: {
                 id: '@acId',
                 inputName: '@acInputName',
