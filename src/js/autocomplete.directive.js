@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var MaterialAutocomplete = function () {
+    var MaterialAutocomplete = function ($timeout) {
         var jsFile = 'materializecss-autocomplete.js';
         var minifiedJsFile = 'materializecss-autocomplete.min.js';
         var jsFileComponent = document.querySelector("script[src$='" + jsFile + "']");
@@ -19,6 +19,7 @@
         return {
             restrict: 'E',
             scope: {},
+            require: ['^?form'],
             bindToController: {
                 id: '@acId',
                 inputName: '@acInputName',
@@ -43,18 +44,24 @@
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
                 required: '@?acRequired',
-                selectionErrorMessage: '@?acSelectionErrorMessage',
-                errorColor: '@?acErrorColor',
-                successColor: '@?acSuccessColor',
+                selectionErrorMessage: '=?acSelectionErrorMessage',
+                errorColor: '=?acErrorColor',
+                successColor: '=?acSuccessColor',
                 disableCrossIcon: '=?acDisableCrossIcon'
             },
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
             templateUrl: listView,
+            link: function (scope, element, attrs, formCtrl) {
+                $timeout(function(){
+                    scope.parentForm = formCtrl;
+                    scope.$apply();
+                }, 10);
+            }
         };
     };
 
     angular.module('material.autocomplete')
-        .directive('materialAutocomplete', [MaterialAutocomplete]);
+        .directive('materialAutocomplete', ['$timeout', MaterialAutocomplete]);
 })();

@@ -1,11 +1,11 @@
-/* materializecss-autocomplete - v1.0.6 - 2017-06-07 */(function () {
+/* materializecss-autocomplete - v1.0.7 - 2017-06-14 */(function () {
     'use strict';
     angular.module('material.autocomplete',[]);
 })();
 
 (function () {
     'use strict';
-    var MaterialAutocomplete = function () {
+    var MaterialAutocomplete = function ($timeout) {
         var jsFile = 'materializecss-autocomplete.js';
         var minifiedJsFile = 'materializecss-autocomplete.min.js';
         var jsFileComponent = document.querySelector("script[src$='" + jsFile + "']");
@@ -24,6 +24,7 @@
         return {
             restrict: 'E',
             scope: {},
+            require: ['^?form'],
             bindToController: {
                 id: '@acId',
                 inputName: '@acInputName',
@@ -48,27 +49,38 @@
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
                 required: '@?acRequired',
-                selectionErrorMessage: '@?acSelectionErrorMessage',
-                errorColor: '@?acErrorColor',
-                successColor: '@?acSuccessColor',
+                selectionErrorMessage: '=?acSelectionErrorMessage',
+                errorColor: '=?acErrorColor',
+                successColor: '=?acSuccessColor',
                 disableCrossIcon: '=?acDisableCrossIcon'
             },
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
             templateUrl: listView,
+            link: function (scope, element, attrs, formCtrl) {
+                $timeout(function(){
+                    scope.parentForm = formCtrl;
+                    scope.$apply();
+                }, 10);
+            }
         };
     };
 
     angular.module('material.autocomplete')
-        .directive('materialAutocomplete', [MaterialAutocomplete]);
+        .directive('materialAutocomplete', ['$timeout', MaterialAutocomplete]);
 })();
 
 (function () {
     'use strict';
 
-    var MaterialAutocompleteCntrl = function ($scope, $element, $q) {
+    var MaterialAutocompleteCntrl = function ($scope, $element, $q, $timeout) {
         var self = this;
+
+        $timeout(function () {
+            self.parentForm = $scope.parentForm;
+        }, 20);
+
 
         /**
          * Common Keyboard actions and their associated keycode.
@@ -534,6 +546,14 @@
         self.errorTextStyle = function (errorColor) {
             return {'color': errorColor};
         };
+        /**
+         * This function gives style to success Text Message
+         * @param colorHashCode or color name
+         * @returns {Style}
+         */
+        self.errorTextStyle = function (successColor) {
+            return {'color': successColor};
+        };
 
         /**
          * This function gives style to Input border on error
@@ -542,7 +562,8 @@
          */
         self.errorInputStyle = function (errorColor) {
             return {
-                'border-bottom-color': errorColor
+                'border-bottom-color': errorColor,
+                'box-shadow': '0 1px 0 0 ' + errorColor
             };
         };
 
@@ -553,7 +574,8 @@
          */
         self.successInputStyle = function (successColor) {
             return {
-                'border-bottom-color': successColor
+                'border-bottom-color': successColor,
+                'box-shadow': '0 1px 0 0 ' + successColor
             };
         };
 
@@ -562,7 +584,7 @@
          * @returns {boolean}
          */
         self.checkSuccess = function () {
-            return self.isInputFocus && self.selectedItem;
+            return self.isInputFocus && self.selectedItem && !self.disableInput;
         };
 
         /**
@@ -570,7 +592,7 @@
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.required && self.isInputBlur && !self.selectedItem;
+            return self.required && self.isInputBlur && !self.selectedItem && !self.disableInput;
         };
 
     };
@@ -580,6 +602,7 @@
             '$scope',
             '$element',
             '$q',
+            '$timeout',
             MaterialAutocompleteCntrl
         ]);
 

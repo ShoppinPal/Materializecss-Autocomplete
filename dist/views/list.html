@@ -1,30 +1,28 @@
-<form name="searchAutocomplete" id="autocompleteForm-{{ac.id}}">
+<div name="searchAutocomplete" id="autocompleteForm-{{ac.id}}" ng-init="ac.inputFieldName='acInputField-'+ac.id">
     <div id="acDirective" class="acDirectiveAutocomplete">
         <div class="row">
             <div id="acForm" class="input-field col s12 has-clear" ng-init="ac.init()">
-                <div class="form-group"
-                     ng-class="{ 'has-error' : userForm.username.$invalid && searchAutocomplete.acInputField.$touched && !ac.selectedItem}">
-                    <input id="autocomplete-{{ac.id}}"
-                           name="acInputField"
-                           type="text"
-                           ng-model="ac.searchText"
-                           ng-focus="ac.focus($event)"
-                           ng-blur="ac.blur($event)"
-                           ng-keydown="ac.keydown($event)"
-                           ng-disabled="ac.disableInput"
-                           ng-required="!ac.selectedItem"
-                           autocomplete="off"
-                           class="ac-input"
-                           ng-style="ac.checkError()  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"
-                    >
-                    <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"
-                          class="clearBtn" title="Clear"
-                          ng-click="ac.clearValue()">&times;</span>
-                    <label for="autocomplete-{{ac.id}}" ng-class="{'active':(ac.searchText||ac.isInputFocus)}">{{ac.inputName}}</label>
-
-
-                    <span class="text-input-wrapper"></span>
-                </div>
+                <input id="autocomplete-{{ac.id}}"
+                       name="{{ac.inputFieldName}}"
+                       type="text"
+                       ng-model="ac.searchText"
+                       ng-focus="ac.focus($event)"
+                       ng-blur="ac.blur($event)"
+                       ng-keydown="ac.keydown($event)"
+                       ng-disabled="ac.disableInput"
+                       ng-required="ac.required"
+                       autocomplete="off"
+                       class="ac-input"
+                       ng-style="(ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted))  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"
+                >
+                <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"
+                      class="clearBtn" title="Clear"
+                      ng-click="ac.clearValue()">&times;</span>
+                <label for="autocomplete-{{ac.id}}" ng-class="{'active':(ac.searchText||ac.isInputFocus)}"
+                       ng-style="(ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted))  && ac.errorTextStyle(ac.errorColor) || ac.checkSuccess() && ac.successTextStyle(ac.successColor)">
+                    {{ac.inputName}}
+                </label>
+                <span class="text-input-wrapper"></span>
             </div>
         </div>
         <div class="progress" ng-show="ac.loading">
@@ -60,11 +58,11 @@
                     </li>
                 </ul>
             </div>
-
         </div>
-        <div ng-show="ac.checkError()"
+        <div ng-if="ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted)"
+             class="right errorMsg"
              ng-style="ac.errorTextStyle(ac.errorColor)">
             {{ac.selectionErrorMessage}}
         </div>
     </div>
-</form>
+</div>

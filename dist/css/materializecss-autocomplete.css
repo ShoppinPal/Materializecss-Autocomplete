@@ -36,54 +36,54 @@
 .acDirectiveAutocomplete #acForm .clearBtn:hover {
   color: #000;
 }
-/* line 32, ../scss/list.scss */
+/* line 33, ../scss/list.scss */
 .acDirectiveAutocomplete #acForm .ac-input {
-  box-shadow: none !important;
   margin-bottom: 0px !important;
 }
 /* line 35, ../scss/list.scss */
 .acDirectiveAutocomplete #acForm .ac-input:focus, .acDirectiveAutocomplete #acForm .ac-input.valid {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #666;
+  box-shadow: none;
 }
-/* line 40, ../scss/list.scss */
+/* line 38, ../scss/list.scss */
+.acDirectiveAutocomplete #acForm .ac-input:focus + label, .acDirectiveAutocomplete #acForm .ac-input.valid + label {
+  color: #666;
+}
+/* line 44, ../scss/list.scss */
 .acDirectiveAutocomplete #acForm label {
   left: 0;
 }
-/* line 44, ../scss/list.scss */
+/* line 47, ../scss/list.scss */
 .acDirectiveAutocomplete #acForm .errorMsg {
   position: absolute;
-  top: 35px;
-  font-size: 13px;
-  color: red;
-  right: 0;
 }
-/* line 53, ../scss/list.scss */
+/* line 52, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown {
   position: absolute;
   width: 100%;
   z-index: 10;
 }
-/* line 57, ../scss/list.scss */
+/* line 56, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul {
   max-height: 200px;
   overflow-y: auto;
   margin: 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
-/* line 62, ../scss/list.scss */
+/* line 61, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li {
   display: block;
   border: none;
 }
-/* line 65, ../scss/list.scss */
+/* line 64, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li:hover {
   background-color: #eeeeee;
 }
-/* line 68, ../scss/list.scss */
+/* line 67, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li.selected {
   background-color: #eeeeee;
 }
-/* line 71, ../scss/list.scss */
+/* line 70, ../scss/list.scss */
 .acDirectiveAutocomplete #acDropdown .dropdown-ul .dropdown-li .displayColor {
   height: 20px;
   width: 20px;
