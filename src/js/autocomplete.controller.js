@@ -1,8 +1,13 @@
 (function () {
     'use strict';
 
-    var MaterialAutocompleteCntrl = function ($scope, $element, $q) {
+    var MaterialAutocompleteCntrl = function ($scope, $element, $q, $timeout) {
         var self = this;
+
+        $timeout(function () {
+            self.parentForm = $scope.parentForm;
+        }, 20);
+
 
         /**
          * Common Keyboard actions and their associated keycode.
@@ -524,6 +529,7 @@
             '$scope',
             '$element',
             '$q',
+            '$timeout',
             MaterialAutocompleteCntrl
         ]);
 
