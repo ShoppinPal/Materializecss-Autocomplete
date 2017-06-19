@@ -1,21 +1,6 @@
 (function () {
     'use strict';
     var MaterialAutocomplete = function ($timeout) {
-        var jsFile = 'materializecss-autocomplete.js';
-        var minifiedJsFile = 'materializecss-autocomplete.min.js';
-        var jsFileComponent = document.querySelector("script[src$='" + jsFile + "']");
-        var minfiedJsFileComponent = document.querySelector("script[src$='" + minifiedJsFile + "']");
-        var jsFilePath;
-        if (jsFileComponent) {
-            jsFilePath = jsFileComponent.src;
-        } else if (minfiedJsFileComponent) {
-            jsFilePath = minfiedJsFileComponent.src;
-        }
-
-        var baseUrl = jsFilePath.substring(0, jsFilePath.lastIndexOf('/', jsFilePath.lastIndexOf('/') - 1));
-
-        var listView = baseUrl + '/views/list.html';
-
         return {
             restrict: 'E',
             scope: {},
@@ -43,7 +28,7 @@
                 onBlurCb: '&?acOnBlurCb',
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
-                required: '@?acRequired',
+                required: '=?acRequired',
                 selectionErrorMessage: '=?acSelectionErrorMessage',
                 errorColor: '=?acErrorColor',
                 successColor: '=?acSuccessColor',
@@ -52,9 +37,9 @@
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl: listView,
+            templateUrl:'acTemplate.html' ,
             link: function (scope, element, attrs, formCtrl) {
-                $timeout(function(){
+                $timeout(function () {
                     scope.parentForm = formCtrl;
                     scope.$apply();
                 }, 10);
