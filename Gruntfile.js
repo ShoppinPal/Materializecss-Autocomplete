@@ -8,6 +8,7 @@ module.exports = function (grunt) {
          */
 
         clean: {
+            options: {force: true},
             dist: ['dist'],
             lib: ['demo/client/lib']
         },
@@ -28,13 +29,40 @@ module.exports = function (grunt) {
                 }
             }
         },
+        html2js: {
+            options: {
+                rename: function (moduleName) {
+                    return "ac-templates";
+                },
+                base: 'material.autocomplete',
+                module: 'material.autocomplete.templates',
+                singleModule: true,
+                useStrict: true,
+                quoteChar: '\'',
+                htmlmin: {
+                    collapseBooleanAttributes: true,
+                    collapseWhitespace: true,
+                    removeAttributeQuotes: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true
+                }
+            },
+            main: {
+                src: ['src/views/template.html'],
+                dest: 'src/js/autocomplete.template.js'
+            }
+        },
         concat: {
             options: {
+                force: true,
                 banner: '/* <%= pkg.name %> - v<%= pkg.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
-                src: ['src/js/autocomplete.js', 'src/js/autocomplete.directive.js', 'src/js/autocomplete.controller.js'],
+                src: ['src/js/autocomplete.js', 'src/js/autocomplete.template.js', 'src/js/autocomplete.directive.js', 'src/js/autocomplete.controller.js'],
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },
@@ -51,12 +79,6 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            html: {
-                expand: true,
-                cwd: 'src/views/',
-                src: ['**'],
-                dest: 'dist/views/',
-            },
             css: {
 
                 src: 'src/css/*.css',
@@ -75,12 +97,6 @@ module.exports = function (grunt) {
                 dest: 'dist/css/<%= pkg.name %>.min.css'
             }
         },
-        watch: {
-            dist: {
-                files: ['Gruntfile.js', 'src/js/*.js', 'src/scss/*.scss', 'src/views/*.html'],
-                tasks: ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib']
-            }
-        },
         run_node: {
             start: {
                 options: {
@@ -88,6 +104,12 @@ module.exports = function (grunt) {
                     detached: false
                 },
                 files: {src: ['demo/server/server.js']},
+            }
+        },
+        watch: {
+            dist: {
+                files: ['Gruntfile.js', 'src/js/*.js', '!src/js/autocomplete.template.js', 'src/scss/*.scss', 'src/views/*.html'],
+                tasks: ['clean', 'jshint', 'compass', 'html2js', 'concat', 'uglify', 'copy:css', 'cssmin', 'copy:lib']
             }
         }
     });
@@ -99,9 +121,22 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-run-node');
 
-    grunt.registerTask('default', ['clean', 'jshint', 'compass', 'concat', 'uglify', 'copy:html', 'copy:css', 'cssmin', 'copy:lib', 'run_node', 'watch']);
+    grunt.registerTask('default', [
+        'clean',
+        'jshint',
+        'compass',
+        'html2js',
+        'concat',
+        'uglify',
+        'copy:css',
+        'cssmin',
+        'copy:lib',
+        'run_node',
+        'watch'
+    ]);
 };
 
 
