@@ -14,13 +14,13 @@
                            ng-required="ac.required"
                            autocomplete="off"
                            class="ac-input"
-                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"
+                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))  && ac.setInputBorderStyle(ac.errorColor) || ac.checkSuccess() && ac.setInputBorderStyle(ac.successColor)"
                     >
                     <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"
                           class="clearBtn" title="Clear"
                           ng-click="ac.clearValue()">&times;</span>
                     <label for="autocomplete-{{ac.id}}" ng-class="{'active':(ac.searchText||ac.isInputFocus)}"
-                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted)) && ac.errorTextStyle(ac.errorColor) || ac.checkSuccess() && ac.successTextStyle(ac.successColor)">
+                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted)) && ac.setTextStyle(ac.errorColor) || ac.checkSuccess() && ac.setTextStyle(ac.successColor)">
                         {{ac.inputName}}
                     </label>
                     <span class="text-input-wrapper"></span>
@@ -64,7 +64,7 @@
             </div>
             <div ng-if="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))"
                  class="right errorMsg"
-                 ng-style="ac.errorTextStyle(ac.errorColor)">
+                 ng-style="ac.setTextStyle(ac.errorColor)">
                 {{ac.selectionErrorMessage}}
             </div>
         </div>

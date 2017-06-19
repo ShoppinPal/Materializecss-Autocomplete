@@ -468,43 +468,23 @@
         }
 
         /**
-         * This function gives style to error Text Message
+         * This function gives style to error or success Text Message
          * @param colorHashCode or color name
          * @returns {Style}
          */
-        self.errorTextStyle = function (errorColor) {
-            return {'color': errorColor};
-        };
-        /**
-         * This function gives style to success Text Message
-         * @param colorHashCode or color name
-         * @returns {Style}
-         */
-        self.errorTextStyle = function (successColor) {
-            return {'color': successColor};
+        self.setTextStyle = function (color) {
+            return {'color': color};
         };
 
         /**
-         * This function gives style to Input border on error
+         * This function gives style to Input border on success or error
          * @param colorHashCode or color name
          * @returns {Style}
          */
-        self.errorInputStyle = function (errorColor) {
+        self.setInputBorderStyle = function (color) {
             return {
-                'border-bottom-color': errorColor,
-                'box-shadow': '0 1px 0 0 ' + errorColor
-            };
-        };
-
-        /**
-         * This function gives style to Input border on success
-         * @param colorHashCode or color name
-         * @returns {Style}
-         */
-        self.successInputStyle = function (successColor) {
-            return {
-                'border-bottom-color': successColor,
-                'box-shadow': '0 1px 0 0 ' + successColor
+                'border-bottom-color': color,
+                'box-shadow': '0 1px 0 0 ' + color
             };
         };
 
