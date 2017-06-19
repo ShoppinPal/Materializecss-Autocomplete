@@ -28,7 +28,7 @@
                 onBlurCb: '&?acOnBlurCb',
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
-                required: '@?acRequired',
+                required: '=?acRequired',
                 selectionErrorMessage: '=?acSelectionErrorMessage',
                 errorColor: '=?acErrorColor',
                 successColor: '=?acSuccessColor',

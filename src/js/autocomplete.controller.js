@@ -34,7 +34,9 @@
         var noBlur = false,
             hasFocus = false;
 
-
+        self.required = !!self.required;
+        self.isInputFocus = false;
+        self.isInputBlur = false;
         self.clearButton = false;
         self.loading = false;
         self.index = -1;
@@ -519,7 +521,7 @@
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.required && self.isInputBlur && !self.selectedItem && !self.disableInput;
+            return self.isInputBlur && !self.selectedItem && !self.disableInput;
         };
 
     };

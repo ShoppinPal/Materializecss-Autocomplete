@@ -25,13 +25,13 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
     '                           ng-required="ac.required"\n' +
     '                           autocomplete="off"\n' +
     '                           class="ac-input"\n' +
-    '                           ng-style="(ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted))  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"\n' +
+    '                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))  && ac.errorInputStyle(ac.errorColor) || ac.checkSuccess() && ac.successInputStyle(ac.successColor)"\n' +
     '                    >\n' +
     '                    <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"\n' +
     '                          class="clearBtn" title="Clear"\n' +
     '                          ng-click="ac.clearValue()">&times;</span>\n' +
     '                    <label for="autocomplete-{{ac.id}}" ng-class="{\'active\':(ac.searchText||ac.isInputFocus)}"\n' +
-    '                           ng-style="(ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted))  && ac.errorTextStyle(ac.errorColor) || ac.checkSuccess() && ac.successTextStyle(ac.successColor)">\n' +
+    '                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted)) && ac.errorTextStyle(ac.errorColor) || ac.checkSuccess() && ac.successTextStyle(ac.successColor)">\n' +
     '                        {{ac.inputName}}\n' +
     '                    </label>\n' +
     '                    <span class="text-input-wrapper"></span>\n' +
@@ -73,7 +73,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
     '                    </ul>\n' +
     '                </div>\n' +
     '            </div>\n' +
-    '            <div ng-if="ac.checkError() || (ac.parentForm[0][ac.inputFieldName].$error.required && ac.parentForm[0].$submitted)"\n' +
+    '            <div ng-if="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))"\n' +
     '                 class="right errorMsg"\n' +
     '                 ng-style="ac.errorTextStyle(ac.errorColor)">\n' +
     '                {{ac.selectionErrorMessage}}\n' +
@@ -112,7 +112,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
                 onBlurCb: '&?acOnBlurCb',
                 onFocusCb: '&?acOnFocusCb',
                 minlength: '=?acMinlength',
-                required: '@?acRequired',
+                required: '=?acRequired',
                 selectionErrorMessage: '=?acSelectionErrorMessage',
                 errorColor: '=?acErrorColor',
                 successColor: '=?acSuccessColor',
@@ -171,7 +171,9 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
         var noBlur = false,
             hasFocus = false;
 
-
+        self.required = !!self.required;
+        self.isInputFocus = false;
+        self.isInputBlur = false;
         self.clearButton = false;
         self.loading = false;
         self.index = -1;
@@ -656,7 +658,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.required && self.isInputBlur && !self.selectedItem && !self.disableInput;
+            return self.isInputBlur && !self.selectedItem && !self.disableInput;
         };
 
     };
