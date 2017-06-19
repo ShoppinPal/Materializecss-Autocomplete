@@ -501,7 +501,11 @@
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.isInputBlur && !self.selectedItem && !self.disableInput;
+            var isFormSubmitted = false;
+            if (self.parentForm) {
+                isFormSubmitted = self.parentForm[0].$submitted;
+            }
+            return self.required && !self.disableInput && !self.selectedItem && (self.isInputBlur || isFormSubmitted);
         };
 
     };

@@ -25,13 +25,13 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
     '                           ng-required="ac.required"\n' +
     '                           autocomplete="off"\n' +
     '                           class="ac-input"\n' +
-    '                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))  && ac.setInputBorderStyle(ac.errorColor) || ac.checkSuccess() && ac.setInputBorderStyle(ac.successColor)"\n' +
+    '                           ng-style="ac.checkError()  && ac.setInputBorderStyle(ac.errorColor) || ac.checkSuccess() && ac.setInputBorderStyle(ac.successColor)"\n' +
     '                    >\n' +
     '                    <span ng-if="!ac.disableCrossIcon && ac.searchText.length>0" id="clear {{ac.autocompleteId}}"\n' +
     '                          class="clearBtn" title="Clear"\n' +
     '                          ng-click="ac.clearValue()">&times;</span>\n' +
     '                    <label for="autocomplete-{{ac.id}}" ng-class="{\'active\':(ac.searchText||ac.isInputFocus)}"\n' +
-    '                           ng-style="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted)) && ac.setTextStyle(ac.errorColor) || ac.checkSuccess() && ac.setTextStyle(ac.successColor)">\n' +
+    '                           ng-style="ac.checkError() && ac.setTextStyle(ac.errorColor) || ac.checkSuccess() && ac.setTextStyle(ac.successColor)">\n' +
     '                        {{ac.inputName}}\n' +
     '                    </label>\n' +
     '                    <span class="text-input-wrapper"></span>\n' +
@@ -73,7 +73,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
     '                    </ul>\n' +
     '                </div>\n' +
     '            </div>\n' +
-    '            <div ng-if="(ac.required && (ac.checkError() ||  ac.parentForm[0].$submitted))"\n' +
+    '            <div ng-if="(ac.checkError())"\n' +
     '                 class="right errorMsg"\n' +
     '                 ng-style="ac.setTextStyle(ac.errorColor)">\n' +
     '                {{ac.selectionErrorMessage}}\n' +
@@ -638,7 +638,11 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
          * @returns {boolean}
          */
         self.checkError = function () {
-            return self.isInputBlur && !self.selectedItem && !self.disableInput;
+            var isFormSubmitted = false;
+            if (self.parentForm) {
+                isFormSubmitted = self.parentForm[0].$submitted;
+            }
+            return self.required && !self.disableInput && !self.selectedItem && (self.isInputBlur || isFormSubmitted);
         };
 
     };
