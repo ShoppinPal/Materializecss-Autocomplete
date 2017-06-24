@@ -121,10 +121,13 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl:'acTemplate.html' ,
+            templateUrl: 'acTemplate.html',
             link: function (scope, element, attrs, formCtrl) {
                 $timeout(function () {
-                    scope.parentForm = formCtrl;
+                    scope.parentForm = formCtrl[0];
+                    if (formCtrl[0] && formCtrl[0].$$parentForm.$name) {
+                        scope.parentForm = formCtrl[0].$$parentForm;
+                    }
                     scope.$apply();
                 }, 10);
             }
@@ -639,8 +642,8 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
          */
         self.checkError = function () {
             var isFormSubmitted = false;
-            if (self.parentForm && self.parentForm[0] && self.parentForm[0]!==null) {
-                isFormSubmitted = self.parentForm[0].$submitted;
+            if (self.parentForm && self.parentForm !== null) {
+                isFormSubmitted = self.parentForm.$submitted;
             }
             return self.required && !self.disableInput && !self.selectedItem && (self.isInputBlur || isFormSubmitted);
         };
