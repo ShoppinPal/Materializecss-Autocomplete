@@ -37,10 +37,13 @@
             replace: true,
             controller: 'materialAutocompleteCntrl',
             controllerAs: 'ac',
-            templateUrl:'acTemplate.html' ,
+            templateUrl: 'acTemplate.html',
             link: function (scope, element, attrs, formCtrl) {
                 $timeout(function () {
-                    scope.parentForm = formCtrl;
+                    scope.parentForm = formCtrl[0];
+                    if (formCtrl[0] && formCtrl[0].$$parentForm.$name) {
+                        scope.parentForm = formCtrl[0].$$parentForm;
+                    }
                     scope.$apply();
                 }, 10);
             }

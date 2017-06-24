@@ -502,8 +502,8 @@
          */
         self.checkError = function () {
             var isFormSubmitted = false;
-            if (self.parentForm && self.parentForm[0] && self.parentForm[0]!==null) {
-                isFormSubmitted = self.parentForm[0].$submitted;
+            if (self.parentForm && self.parentForm !== null) {
+                isFormSubmitted = self.parentForm.$submitted;
             }
             return self.required && !self.disableInput && !self.selectedItem && (self.isInputBlur || isFormSubmitted);
         };
