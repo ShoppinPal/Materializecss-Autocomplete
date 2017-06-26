@@ -2854,7 +2854,7 @@
     },
     "materialize-css": {
       "version": "0.97.8",
-      "from": "materialize-css@>=0.97.7 <0.98.0",
+      "from": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.97.8.tgz",
       "resolved": "https://registry.npmjs.org/materialize-css/-/materialize-css-0.97.8.tgz"
     },
     "maxmin": {

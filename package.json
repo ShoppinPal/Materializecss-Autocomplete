@@ -2,10 +2,9 @@
   "name": "materializecss-autocomplete",
   "version": "1.0.8",
   "description": "angularjs autocomplete",
-  "main": [
-    "dist/js/materializecss-autocomplete.min.js",
-    "dist/css/materializecss-autocomplete.min.css"
-  ],
+  "main": "dist/js/materializecss-autocomplete.min.js",
+  "style": "dist/css/materializecss-autocomplete.min.css",
+  "sass": "src/scss/list.scss",
   "directories": {
     "test": "test"
   },
