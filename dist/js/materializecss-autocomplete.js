@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.8 - 2017-06-24 */(function () {
+/* materializecss-autocomplete - v1.0.9 - 2017-07-04 */(function () {
     'use strict';
     angular.module('material.autocomplete', ['material.autocomplete.templates'])
         .run(['$templateCache', '$compile', '$rootScope', function ($templateCache, $compile, $rootScope) {
@@ -453,6 +453,9 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
             if (selectedItem) {
                 if (self.displayProperty1) {
                     self.searchText = selectedItem[self.displayProperty1];
+                }
+                if (self.parentForm && self.parentForm !== null) {
+                    self.parentForm.$setDirty();
                 }
             }
             else if (previousSelectedItem && self.searchText) {
