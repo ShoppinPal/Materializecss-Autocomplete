@@ -314,6 +314,9 @@
                 if (self.displayProperty1) {
                     self.searchText = selectedItem[self.displayProperty1];
                 }
+                if (self.parentForm && self.parentForm !== null) {
+                    self.parentForm.$setDirty();
+                }
             }
             else if (previousSelectedItem && self.searchText) {
                 if (previousSelectedItem[self.displayProperty1] === self.searchText) {
