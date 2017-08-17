@@ -117,6 +117,7 @@
         function clearValue() {
             clearSelectedItem();
             setInputClearButton();
+            self.parentForm.$setDirty();
         }
 
         self.clearValue = clearValue;
