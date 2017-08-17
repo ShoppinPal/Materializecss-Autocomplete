@@ -192,6 +192,14 @@
             if (!noBlur) {
                 self.hidden = shouldHide();
             }
+            if(self.checkError()) {
+                self.parentForm.$setValidity('selection', false);
+                self.parentForm[self.inputFieldName].$setValidity('selection', false);
+            }
+            else {
+                self.parentForm[self.inputFieldName].$setValidity('selection', true);
+                self.parentForm.$setValidity('selection', true);
+            }
         };
 
 
