@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.9 - 2017-07-04 */(function () {
+/* materializecss-autocomplete - v1.0.10 - 2017-08-17 */(function () {
     'use strict';
     angular.module('material.autocomplete', ['material.autocomplete.templates'])
         .run(['$templateCache', '$compile', '$rootScope', function ($templateCache, $compile, $rootScope) {
@@ -257,6 +257,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
         function clearValue() {
             clearSelectedItem();
             setInputClearButton();
+            self.parentForm.$setDirty();
         }
 
         self.clearValue = clearValue;
