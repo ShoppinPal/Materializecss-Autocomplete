@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.10 - 2017-08-17 */(function () {
+/* materializecss-autocomplete - v1.0.11 - 2017-08-17 */(function () {
     'use strict';
     angular.module('material.autocomplete', ['material.autocomplete.templates'])
         .run(['$templateCache', '$compile', '$rootScope', function ($templateCache, $compile, $rootScope) {
@@ -331,6 +331,14 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
 
             if (!noBlur) {
                 self.hidden = shouldHide();
+            }
+            if(self.checkError()) {
+                self.parentForm.$setValidity('selection', false);
+                self.parentForm[self.inputFieldName].$setValidity('selection', false);
+            }
+            else {
+                self.parentForm[self.inputFieldName].$setValidity('selection', true);
+                self.parentForm.$setValidity('selection', true);
             }
         };
 
