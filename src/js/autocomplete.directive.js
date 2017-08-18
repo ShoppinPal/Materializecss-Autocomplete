@@ -42,6 +42,7 @@
                 $timeout(function () {
                     scope.parentForm = formCtrl[0];
                     if (formCtrl[0] && formCtrl[0].$$parentForm.$name) {
+                        scope.immediateParentForm = formCtrl[0];
                         scope.parentForm = formCtrl[0].$$parentForm;
                     }
                     scope.$apply();
