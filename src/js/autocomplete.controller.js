@@ -194,11 +194,13 @@
             }
             if(self.checkError()) {
                 self.parentForm.$setValidity('selection', false);
-                self.parentForm[self.inputFieldName].$setValidity('selection', false);
+                self.immediateParentForm.$setValidity('selection', false);
+                self.immediateParentForm[self.inputFieldName].$setValidity('selection', false);
             }
             else {
-                self.parentForm[self.inputFieldName].$setValidity('selection', true);
                 self.parentForm.$setValidity('selection', true);
+                self.immediateParentForm.$setValidity('selection', true);
+                self.immediateParentForm[self.inputFieldName].$setValidity('selection', true);
             }
         };
 
