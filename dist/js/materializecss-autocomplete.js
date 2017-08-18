@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.11 - 2017-08-18 */(function () {
+/* materializecss-autocomplete - v1.0.12 - 2017-08-18 */(function () {
     'use strict';
     angular.module('material.autocomplete', ['material.autocomplete.templates'])
         .run(['$templateCache', '$compile', '$rootScope', function ($templateCache, $compile, $rootScope) {
