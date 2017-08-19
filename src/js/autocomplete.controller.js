@@ -6,6 +6,7 @@
 
         $timeout(function () {
             self.parentForm = $scope.parentForm;
+            self.immediateParentForm = $scope.immediateParentForm;
         }, 20);
 
 
@@ -194,13 +195,17 @@
             }
             if(self.checkError()) {
                 self.parentForm.$setValidity('selection', false);
-                self.immediateParentForm.$setValidity('selection', false);
-                self.immediateParentForm[self.inputFieldName].$setValidity('selection', false);
+                if(self.immediateParentForm) {
+                    self.immediateParentForm.$setValidity('selection', false);
+                    self.immediateParentForm[self.inputFieldName].$setValidity('selection', false);
+                }
             }
             else {
                 self.parentForm.$setValidity('selection', true);
-                self.immediateParentForm.$setValidity('selection', true);
-                self.immediateParentForm[self.inputFieldName].$setValidity('selection', true);
+                if(self.immediateParentForm) {
+                    self.immediateParentForm.$setValidity('selection', true);
+                    self.immediateParentForm[self.inputFieldName].$setValidity('selection', true);
+                }
             }
         };
 
