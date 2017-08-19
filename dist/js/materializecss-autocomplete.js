@@ -1,4 +1,4 @@
-/* materializecss-autocomplete - v1.0.12 - 2017-08-18 */(function () {
+/* materializecss-autocomplete - v1.0.13 - 2017-08-19 */(function () {
     'use strict';
     angular.module('material.autocomplete', ['material.autocomplete.templates'])
         .run(['$templateCache', '$compile', '$rootScope', function ($templateCache, $compile, $rootScope) {
@@ -147,6 +147,7 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
 
         $timeout(function () {
             self.parentForm = $scope.parentForm;
+            self.immediateParentForm = $scope.immediateParentForm;
         }, 20);
 
 
@@ -335,13 +336,17 @@ angular.module('material.autocomplete.templates', []).run(['$templateCache', fun
             }
             if(self.checkError()) {
                 self.parentForm.$setValidity('selection', false);
-                self.immediateParentForm.$setValidity('selection', false);
-                self.immediateParentForm[self.inputFieldName].$setValidity('selection', false);
+                if(self.immediateParentForm) {
+                    self.immediateParentForm.$setValidity('selection', false);
+                    self.immediateParentForm[self.inputFieldName].$setValidity('selection', false);
+                }
             }
             else {
                 self.parentForm.$setValidity('selection', true);
-                self.immediateParentForm.$setValidity('selection', true);
-                self.immediateParentForm[self.inputFieldName].$setValidity('selection', true);
+                if(self.immediateParentForm) {
+                    self.immediateParentForm.$setValidity('selection', true);
+                    self.immediateParentForm[self.inputFieldName].$setValidity('selection', true);
+                }
             }
         };
 
