@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var MaterialAutocompleteCntrl = function ($scope, $element, $q, $timeout) {
+  var MaterialAutocompleteCntrl = function ($scope, $element, $q, $timeout, $filter) {
     var self = this;
 
     $timeout(function () {
@@ -64,6 +64,10 @@
 
       if (self.itemList && typeof self.itemList[0] === 'string') {
         self.itemList = convertArrayToObject(self.itemList);
+      }
+
+      if (self.itemList && typeof self.itemList[0] === 'object') {
+        self.itemListCopy = angular.copy(self.itemList);
       }
 
       if (self.remoteMethod) {
@@ -319,10 +323,16 @@
         if (self.selectedItem[self.displayProperty1] !== searchText) {
           self.selectedItem = null;
           self.hidden = shouldHide();
+          if (self.itemList && self.itemListCopy) {
+            self.itemList = angular.copy(self.itemListCopy);
+          }
         }
       }
       else if (self.remoteMethod) {
         fetchResults(searchText);
+      }
+      else if (self.itemList) {
+        self.itemList = $filter('filter')(self.itemListCopy, searchText);
       }
     }
 
@@ -541,6 +551,7 @@
       '$element',
       '$q',
       '$timeout',
+      '$filter',
       MaterialAutocompleteCntrl
     ]);
 
